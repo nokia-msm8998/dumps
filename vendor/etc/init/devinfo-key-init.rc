@@ -1,0 +1,5 @@
+service devinfo-key-init /vendor/bin/devinfo-key-init
+    class main
+    user root
+    group root
+    oneshot

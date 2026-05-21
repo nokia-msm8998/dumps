@@ -1,0 +1,569 @@
+{
+    "PRODUCT": [
+        {
+            "name": "CT60",
+            "package": [
+                "com.honeywell.systools.scanhandlesetting"
+            ]
+        },
+
+        {
+            "name": "CN80",
+            "package": [
+                "com.qti.snapdragon.qdcm_mobile",
+                "com.honeywell.systools.scanhandlesetting"
+            ]
+        },
+
+        {
+            "name": "CN85",
+            "package": [
+                "com.qti.snapdragon.qdcm_mobile",
+                "com.honeywell.systools.scanhandlesetting",
+                "com.staylinked.AndroidClient",
+                "com.honeywell.aidc.cp.ETE"
+            ]
+        },
+
+        {
+            "name": "CN80G",
+            "package": [
+                "com.honeywell.tools.smu",
+                "com.qti.snapdragon.qdcm_mobile",
+                "com.honeywell.systools.scanhandlesetting"
+            ]
+        },
+
+        {
+            "name": "VM1A",
+            "package": [
+                "com.honeywell.honeywellwakeup",
+                "com.honeywell.batteryled",
+                "com.honeywell.systools.sensorsetting",
+                "com.honeywell.batterymaximizer",
+                "com.honeywell.tpsettings",
+                "com.honeywell.updatetp",
+                "com.example.zigbee.serialport",
+                "com.example.larry.serialport",
+                "com.honeywell.systools.scanhandlesetting",
+                "com.hsm.android.batthotswap"
+            ]
+        },
+
+        {
+            "name": "VM3A",
+            "package": [
+                "com.honeywell.honeywellwakeup",
+                "com.honeywell.batteryled",
+                "com.honeywell.systools.sensorsetting",
+                "com.honeywell.batterymaximizer",
+                "com.honeywell.tpsettings",
+                "com.honeywell.updatetp",
+                "com.example.zigbee.serialport",
+                "com.example.larry.serialport",
+                "com.hsm.android.batthotswap",
+                "com.honeywell.wifistaging",
+                "com.honeywell.systools.scanhandlesetting"
+            ]
+        },
+
+        {
+            "name": "CK65",
+            "package": [
+                "com.honeywell.systools.scanhandlesetting",
+                "com.qti.snapdragon.qdcm_mobile"
+            ]
+        },
+
+        {
+            "name": "CT40",
+            "package": [
+                "com.honeywell.tpsettings",
+                "com.honeywell.updatetp",
+                "com.honeywell.heater",
+                "com.honeywell.defroster",
+                "com.honeywell.systools.scanhandlesetting"
+            ]
+        },
+
+        {
+            "name": "CT40P",
+            "package": [
+                "com.honeywell.updatetp",
+                "com.honeywell.heater",
+                "com.honeywell.defroster",
+                "com.honeywell.systools.scanhandlesetting"
+            ]
+        },
+
+        {
+            "name": "TA60A",
+            "package": [
+                "com.honeywell.updatetp",
+                "com.honeywell.heater",
+                "com.honeywell.defroster",
+                "com.qti.snapdragon.qdcm_mobile",
+                "com.honeywell.systools.scanhandlesetting"
+            ]
+        }
+    ],
+    "PRODUCT_FALSE": [
+        {
+            "name": "CT60",
+            "package": [
+		"com.honeywell.displaybase",
+                "com.displaylink.presenter.noicon"
+
+            ]
+        },
+
+        {
+            "name": "CN80",
+            "package": [
+                "com.honeywell.systools.blehandlesetting",
+                "com.honeywell.systools.zigbeehandlesetting",
+                "com.honeywell.vdockconfig",
+                "com.honeywell.heater"
+            ]
+        },
+
+        {
+            "name": "CN85",
+            "package": [
+                "com.honeywell.systools.zigbeehandlesetting",
+                "com.honeywell.vdockconfig"
+            ]
+        },
+
+        {
+            "name": "VM1A",
+            "package": [
+                "com.honeywell.powermode",
+                "com.honeywell.tools.zoomzone",
+                "com.honeywell.misc",
+                "com.honeywell.linkledindicator",
+                "com.honeywell.ctstool",
+                "com.honeywell.stickyoption",
+                "com.honeywell.defroster"
+            ]
+        },
+
+        {
+            "name": "VM3A",
+            "package": [
+                "com.honeywell.powermode",
+                "com.honeywell.tools.zoomzone",
+                "com.honeywell.misc",
+                "com.honeywell.linkledindicator",
+                "com.honeywell.systools.scanhandlesetting",
+                "com.honeywell.stickyoption",
+                "com.google.android.dialer",
+                "com.honeywell.defroster"
+            ]
+        },
+
+        {
+            "name": "CK65",
+            "package": [
+                "com.honeywell.heater"
+            ]
+        },
+
+        {
+            "name": "CT40",
+            "package": [
+                "com.honeywell.tools.honeywellobd",
+                "com.honeywell.displaybase",
+                "com.displaylink.presenter.noicon"
+            ]
+        },
+
+        {
+            "name": "CT40P",
+            "package": [
+                "com.honeywell.tools.honeywellobd",
+                "com.honeywell.ble.nrf52.service",
+                "com.honeywell.ble.nrf52.test",
+                "com.honeywell.displaybase",
+                "com.displaylink.presenter.noicon"
+            ]
+        },
+
+        {
+            "name": "TA60A",
+            "package": [
+                "com.honeywell.tools.zoomzone",
+                "com.honeywell.linkledindicator",
+                "com.honeywell.ioports",
+                "com.honeywell.displaybase",
+                "com.displaylink.presenter.noicon"
+            ]
+        }
+    ],
+    "PROPERTY_FALSE": [
+        {
+            "name": "ro.radio.noril",
+            "package": [ ]
+        }
+    ],
+    "PROPERTY_NONE": [
+        {
+            "name": "ro.hsm.zigbee.addr",
+            "package": [
+                "com.example.zigbee.serialport"
+            ]
+        },
+        {
+            "name": "ro.vendor.hon.touch.usb.vendor",
+            "package": [
+                "com.eeti.android.egalaxcalibrator"
+            ]
+        },
+        {
+            "name": "ro.hsm.secbt.addr",
+            "package": [
+                "com.example.larry.serialport"
+            ]
+        }
+    ],
+    "PROPERTY_EQUAL": [
+        {
+            "name": "ro.hon.plat.deploy",
+            "value": [
+                {
+                    "property_value": "none",
+                    "package": [
+                        "com.honeywell.heater",
+                        "com.honeywell.defroster"
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "ro.hon.plat.deploy",
+            "value": [
+                {
+                    "property_value": "NI",
+                    "package": [
+                        "com.honeywell.heater",
+                        "com.honeywell.defroster"
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "ro.hon.plat.deploy",
+            "value": [
+                {
+                    "property_value": "Standard",
+                    "package": [
+                        "com.honeywell.heater",
+                        "com.honeywell.defroster"
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "ro.hon.plat.deploy",
+            "value": [
+                {
+                    "property_value": "defroster",
+                    "package": [
+                        "com.honeywell.heater"
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "ro.hon.plat.deploy",
+            "value": [
+                {
+                    "property_value": "CS",
+                    "package": [
+                        "com.honeywell.defroster"
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "ro.hon.plat.camera",
+            "value": [
+                {
+                    "property_value": "false",
+                    "package": [
+                        "org.codeaurora.snapcamera"
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "ro.hsm.build.gms",
+            "value": [
+                {
+                    "property_value": "true",
+                    "package": [
+                        "com.android.mms"
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "ro.hon.plat.wwan",
+            "value": [
+                {
+                    "property_value": "false",
+                    "package": [
+                        "com.honeywell.tools.carrierselection",
+                        "com.redbend.app",
+                        "com.honeywell.omadmservice",
+                        "com.honeywell.wwanem",
+                        "com.honeywell.wwaninfo",
+                        "com.honeywell.simselectionservice",
+                        "com.honeywell.simselection",
+                        "com.honeywell.nvbrowser",
+                        "com.honeywell.systools.waassettings",
+                        "com.android.carrierconfig",
+                        "com.android.mms",
+                        "com.google.android.apps.messaging",
+                        "com.google.android.apps.safetyhub",
+                        "com.google.android.dialer",
+                        "com.google.android.projection.gearhead",
+                        "com.android.cellbroadcastreceiver",
+                        "com.android.cellbroadcastreceiver.module",
+                        "com.qualcomm.location",
+                        "com.qualcomm.location.XT"
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "ro.vendor.hon.touch.usb.vendor",
+            "value": [
+                {
+                    "property_value": "ATMEL",
+                    "package": [
+                        "com.eeti.android.egalaxcalibrator"
+                    ]
+                },
+                {
+                    "property_value": "unknown",
+                    "package": [
+                        "com.eeti.android.egalaxcalibrator"
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "ro.hon.plat.application",
+            "value": [
+                {
+                    "property_value": "GOV-B",
+                    "package": [
+                        "com.honeywell.tools.smu",
+                        "com.honeywell.wifistaging",
+                        "com.honeywell.tools.wirelesstether",
+                        "com.honeywell.tools.wifidiagnostics",
+                        "com.honeywell.tools.carrierselection",
+                        "com.honeywell.powermode",
+                        "com.honeywell.tools.zoomzone",
+                        "com.honeywell.tools.smu",
+                        "com.honeywell.dbasesetting",
+                        "com.honeywell.misc",
+                        "com.honeywell.linkledindicator",
+                        "com.honeywell.systools.scanhandlesetting",
+                        "com.honeywell.vdockconfig",
+                        "com.honeywell.ctstool",
+                        "com.honeywell.tools.honeywellobd",
+                        "com.honeywell.systools.zigbeehandlesetting",
+                        "com.honeywell.systools.blehandlesetting",
+                        "com.honeywell.aidc.cp.ETE",
+                        "com.honeywell.ioports",
+                        "com.honeywell.beacondirection",
+                        "com.honeywell.omadmservice",
+                        "com.honeywell.wwanem",
+                        "com.honeywell.wwaninfo",
+                        "com.honeywell.simselectionservice",
+                        "com.honeywell.simselection",
+                        "com.honeywell.nvbrowser",
+                        "com.honeywell.systools.waassettings",
+                        "com.android.soundrecorder",
+                        "com.android.carrierconfig",
+                        "com.android.contacts",
+                        "com.android.dialer",
+                        "com.android.mms",
+                        "com.android.cellbroadcastreceiver",
+                        "com.android.cellbroadcastreceiver.module",
+                        "com.android.se",
+                        "com.google.android.dialer",
+                        "com.google.android.apps.messaging",
+                        "com.google.android.apps.safetyhub",
+                        "com.google.android.projection.gearhead",
+                        "com.qti.snapdragon.qdcm_mobile",
+                        "com.staylinked.AndroidClient",
+                        "com.displaylink.presenter.noicon",
+                        "com.redbend.app",
+                        "com.qualcomm.location",
+                        "com.qualcomm.location.XT"
+                    ]
+                },
+                {
+                    "property_value": "GOV",
+                    "package": [
+                       "com.honeywell.powermode",
+                       "com.honeywell.tools.zoomzone",
+                       "com.honeywell.dbasesetting",
+                       "com.displaylink.presenter.noicon",
+                       "com.honeywell.systools.scanhandlesetting",
+                       "com.honeywell.misc",
+                       "com.honeywell.linkledindicator",
+                       "com.honeywell.dbasesetting",
+                       "com.displaylink.presenter.noicon",
+                       "com.honeywell.vdockconfig",
+                       "com.google.android.dialer",
+                       "com.google.android.music",
+                       "com.honeywell.ctstool",
+                       "com.honeywell.tools.honeywellobd",
+                       "com.honeywell.ioports",
+                       "com.honeywell.beacondirection"
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "persist.sys.hon.wifi.fips",
+            "value": [
+                {
+                    "property_value": "true",
+                    "package": [
+                        "com.honeywell.WifiDirect",
+                        "com.honeywell.wifistaging"
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "ro.hon.plat.disable.sharing",
+            "value": [
+                {
+                    "property_value": "true",
+                    "package": [
+                        "com.android.nfc",
+                        "com.android.bluetooth",
+                        "com.honeywell.WifiDirect"
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "ro.hon.plat.deact.audio",
+            "value": [
+                {
+                    "property_value": "true",
+                    "package": [
+                        "com.android.soundrecorder",
+                        "com.qualcomm.qti.sva"
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "ro.hon.plat.deact.camera",
+            "value": [
+                {
+                    "property_value": "true",
+                    "package": [
+                        "org.codeaurora.snapcamera"
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "ro.hon.plat.dataonly",
+            "value": [
+                {
+                    "property_value": "1",
+                    "package": [
+                        "com.android.dialer",
+                        "com.android.mms",
+                        "com.google.android.apps.messaging",
+                        "com.google.android.dialer",
+                        "com.honeywell.tools.carrierselection",
+                        "com.google.android.projection.gearhead"
+
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "ro.hon.plat.dataonly",
+            "value": [
+                {
+                    "property_value": "0",
+                    "package": [
+                        "com.honeywell.secretcodes"
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "ro.hon.plat.countrycode",
+            "value": [
+                {
+                    "property_value": "T",
+                    "package": [
+                        "com.android.dialer",
+                        "com.android.contacts",
+                        "com.android.mms",
+                        "com.honeywell.tools.carrierselection"
+                    ]
+                }
+            ]
+        },        
+        {
+            "name": "ro.hon.plat.keypad",
+            "value": [
+                {
+                    "property_value": "none",
+                    "package": [
+                        "com.honeywell.systools.stickyoptions"
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "ro.hon.plat.app.gov",
+            "value": [
+                {
+                    "property_value": "false",
+                    "package": [
+                        "com.honeywell.assuredradiodeactivation"
+                     ]
+                 }
+             ]
+        },
+        {
+            "name": "ro.hon.plat.app.fips",
+            "value": [
+                {
+                    "property_value": "false",
+                    "package": [
+                        "com.honeywell.fipsservice",
+                        "com.honeywell.fipsenforcemode"
+                    ]
+               }
+            ]
+        },
+        {
+            "name": "ro.hon.plat.app.stig",
+            "value": [
+                {
+                    "property_value": "false",
+                    "package": [
+                        "com.honeywell.dodsecuritybanner",
+                        "com.honeywell.dodsecuritybannerservice"
+                     ]
+                 }
+             ]
+        }
+    ]
+}

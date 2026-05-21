@@ -1,0 +1,12 @@
+import /vendor/etc/init/hw/init.keymaster_v4.rc
+
+on post-fs-data
+    #BatteryAuth
+    chown system system /sys/class/power_supply/bq25700-charger/battery_charging_enabled
+    chmod 664 /sys/class/power_supply/bq25700-charger/battery_charging_enabled
+
+on property:persist.sys.batt.auth.result=succ && property:ro.model=TA60
+   write /sys/class/power_supply/bq25700-charger/battery_charging_enabled 1
+
+on property:persist.sys.batt.auth.result=fail && property:ro.model=TA60
+   write /sys/class/power_supply/bq25700-charger/battery_charging_enabled 0

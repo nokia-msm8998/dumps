@@ -1,0 +1,55 @@
+#
+# Actions and services for the hon660 platform
+#
+import init.honeywell-factorytest.rc
+
+on post-fs-data
+ chown root external_storage /secure
+ chmod 0777 /secure
+ restorecon -Rv secure/
+
+ #appconfigrue
+ mkdir /data/system/appconfigure 0771 system system
+ chmod 0770 /data/system/appconfigure
+
+ #ifw
+ mkdir /data/system/ifw 0700 system system
+ chmod 0700 /data/system/ifw
+
+ #heater
+ mkdir /data/vendor/misc/heater 0771 system system
+ mkdir /data/vendor/misc/heater/log 0771 system system
+
+ #Create directories for dmclient
+ mkdir /data/verizon 0755 system system
+ mkdir /data/verizon/dmclient 0755 system system
+ mkdir /data/verizon/dmclient/data 0755 system system
+ mkdir /data/verizon/dmclient/init 0755 system system
+
+#set persist.OPERATOR_MODE for different carrier
+on property:persist.radio.modem_mode=ATT
+   setprop persist.OPERATOR_MODE 5
+on property:persist.radio.modem_mode=Verizon
+   setprop persist.OPERATOR_MODE 0
+on property:persist.radio.modem_mode=TMO
+   setprop persist.OPERATOR_MODE 9
+
+# [ASLP-634][Telstra] set Google client ID for Telstra.
+on property:persist.radio.set_google_telstra_id=true
+   setprop ro.com.google.clientidbase.wal android-Telstra-au
+   setprop ro.com.google.clientidbase.ms android-Telstra-au-revc
+   setprop ro.com.google.clientidbase.am android-Telstra-au
+
+# [ASLP-634][Telstra] reset google id
+on property:persist.radio.set_google_telstra_id=false
+   setprop ro.com.google.clientidbase.wal ""
+   setprop ro.com.google.clientidbase.ms ""
+   setprop ro.com.google.clientidbase.am ""
+
+# [IA102191-5593] CC NIAP mode should be default ON for CN80G NONGMS build
+on property:ro.boot.model=CN80G && property:ro.hsm.build.gms=false && property:persist.sys.hsm.niap_mode=""
+   setprop persist.sys.hsm.niap_mode 1
+
+# [IA102191-5600] "persist.sys.downgrade" should be default false for CN80G NONGMS build
+on property:ro.boot.model=CN80G && property:ro.hsm.build.gms=false && property:persist.sys.downgrade=""
+   setprop persist.sys.downgrade false

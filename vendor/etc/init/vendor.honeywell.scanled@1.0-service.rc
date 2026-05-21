@@ -1,0 +1,4 @@
+service scanled_service /vendor/bin/hw/vendor.honeywell.scanled@1.0-service
+    class hal
+    user system
+    group system

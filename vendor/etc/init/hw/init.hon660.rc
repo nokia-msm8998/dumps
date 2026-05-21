@@ -1,0 +1,740 @@
+#
+# Actions and services for the hon660 platform
+#
+# This is in addition to the device/qcom/sddm660_64/init.target.rc
+#
+
+import /vendor/etc/init/hw/init.target_common.rc
+import /vendor/etc/init/hw/init.target_ota.rc
+import /vendor/etc/init/hw/init.${ro.model}.rc
+
+on early-init
+    exec u:r:vendor_modprobe:s0 -- /vendor/bin/modprobe -a -d /vendor/lib/modules audio_apr audio_wglink audio_adsp_loader audio_q6_pdr audio_q6_notifier audio_q6 audio_usf audio_native audio_pinctrl_wcd audio_pinctrl_lpi audio_swr audio_platform audio_hdmi audio_wcd_spi audio_stub audio_digital_cdc audio_analog_cdc audio_msm_sdw audio_wcd_cpe audio_cpe_lsm audio_wcd9335 audio_machine_sdm660 audio_wcd934x audio_mbhc audio_wcd9xxx audio_wcd_core audio_max98390 audio_max98937
+    mkdir /firmware 0771 system system
+    mkdir /bt_firmware 0771 system system
+    mkdir /dsp 0771 media media
+
+    # for display dock
+    chown system system /sys/devices/virtual/misc/usb_audio_misc/hdmi
+    chmod 664 /sys/devices/virtual/misc/usb_audio_misc/hdmi
+on fs
+    mount_all /vendor/etc/fstab.qcom
+ ##  EEPROM - MFG data
+    chown root system /sys/bus/i2c/devices/3-0052/eeprom
+    chmod 0660 /sys/bus/i2c/devices/3-0052/eeprom
+    ## Keywakeup
+    chown system system /sys/devices/platform/soc/soc:gpio_keys/wakeup_buttons
+    chmod 0664 /sys/devices/platform/soc/soc:gpio_keys/wakeup_buttons
+    chown system system /sys/devices/platform/soc/soc:gpio_keys/wakeup_scan
+    chmod 0664 /sys/devices/platform/soc/soc:gpio_keys/wakeup_scan
+
+    #heater
+    chown system camera /sys/devices/platform/soc/soc:honeywell,heater@0/heater_blanking
+    chmod 0664 /sys/devices/platform/soc/soc:honeywell,heater@0/heater_blanking
+    chown system system /sys/devices/platform/soc/soc:honeywell,heater@0/heater_blank_option
+    chmod 0664 /sys/devices/platform/soc/soc:honeywell,heater@0/heater_blank_option
+    chown system system /sys/devices/platform/soc/soc:honeywell,heater@0/heater_power
+    chmod 0664 /sys/devices/platform/soc/soc:honeywell,heater@0/heater_power
+    chown system system /sys/devices/platform/soc/soc:honeywell,heater@0/heater_lcd_enable
+    chmod 0664 /sys/devices/platform/soc/soc:honeywell,heater@0/heater_lcd_enable
+    chown system system /sys/devices/platform/soc/soc:honeywell,heater@0/heater_scan_enable
+    chmod 0664 /sys/devices/platform/soc/soc:honeywell,heater@0/heater_scan_enable
+
+    chown system system /sys/devices/platform/soc/800f000.qcom,spmi/spmi-0/spmi0-00/800f000.qcom,spmi:qcom,pm660@0:qcom,power-on@800/pwr_hard_reset_enable
+    chmod 0664  /sys/devices/platform/soc/800f000.qcom,spmi/spmi-0/spmi0-00/800f000.qcom,spmi:qcom,pm660@0:qcom,power-on@800/pwr_hard_reset_enable
+
+    ## Keyremap
+    chown system system /dev/Honeywell_keyremap
+    chmod 0660 /dev/Honeywell_keyremap
+
+    ### /sys/class/leds specific config ##
+    chmod 0664 /sys/class/leds/red/brightness
+    chmod 0664 /sys/class/leds/green/brightness
+    chmod 0664 /sys/class/leds/blue/brightness
+    chmod 0664 /sys/class/leds/pwr_led/brightness
+    chown system system /sys/class/leds/red/brightness
+    chown system system /sys/class/leds/green/brightness
+    chown system system /sys/class/leds/blue/brightness
+    chown system system /sys/class/leds/pwr_led/pwr_led_ctl
+    chown system system /sys/class/leds/pwr_led/brightness
+    chown system system /sys/class/leds/red/blink
+    chown system system /sys/class/leds/green/blink
+    chown system system /sys/class/leds/blue/blink
+    chown system system /sys/class/leds/red/customize_blink
+    chown system system /sys/class/leds/green/customize_blink
+    chown system system /sys/class/leds/blue/customize_blink
+    chown system system /sys/class/leds/red/duty_pcts
+    chown system system /sys/class/leds/red/ramp_step_ms
+    chown system system /sys/class/leds/green/duty_pcts
+    chown system system /sys/class/leds/green/ramp_step_ms
+    chown system system /sys/class/leds/blue/duty_pcts
+    chown system system /sys/class/leds/blue/ramp_step_ms
+    chown system system /sys/class/leds/green/suspend_off
+
+    wait /dev/block/bootdevice/by-name/license
+    mount ext4 /dev/block/bootdevice/by-name/license /license noatime nosuid nodev barrier=1
+    restorecon_recursive /license
+
+    #Scanner led
+    chown system system /sys/class/leds/scanner-red/brightness
+    chmod 0644 /sys/class/leds/scanner-red/brightness
+    chown system system /sys/class/leds/scanner-green/brightness
+    chmod 0644 /sys/class/leds/scanner-green/brightness
+
+    start set_modem_configs_from_hlos
+
+    # change permissions for HSM Counters
+    chown system diag /sys/kernel/hsm_counters/system_counters
+    chmod 0664 /sys/kernel/hsm_counters/system_counters
+    chown system diag /sys/kernel/hsm_counters/system_counters_extend
+    chmod 0664 /sys/kernel/hsm_counters/system_counters_extend
+    chown system system /sys/kernel/hsm_counters/autocount
+    chmod 0664 /sys/kernel/hsm_counters/autocount
+    chown system system /sys/kernel/hsm_counters/store_interval
+    chmod 0664 /sys/kernel/hsm_counters/store_interval
+    chown system diag /sys/kernel/hsm_counters/counters_rawdata
+    chmod 0664 /sys/kernel/hsm_counters/counters_rawdata
+    setprop ro.com.google.ime.expressions ${persist.sys.gboard.emoji_enable}
+
+    #Provision mode
+    chown system system /dev/uid_whitelist
+    chmod 0660 /dev/uid_whitelist
+
+    #Sticky Option
+    chown system system /sys/devices/platform/soc/c1b6000.i2c/i2c-6/6-0034/stickyoption
+    chmod 0664 /sys/devices/platform/soc/c1b6000.i2c/i2c-6/6-0034/stickyoption
+    chown system system /sys/devices/platform/soc/soc:honeywell,mcu_kbd@0/mcu_keypad_sticky_enable
+    chmod 0664 /sys/devices/platform/soc/soc:honeywell,mcu_kbd@0/mcu_keypad_sticky_enable
+
+
+#VM1A VM3A Heater
+    chown system system /sys/devices/platform/soc/soc:honeywell,mcu_defroster@0/mcu_defroster_low_temp_threshold
+    chown system system /sys/devices/platform/soc/soc:honeywell,mcu_defroster@0/mcu_defroster_high_temp_threshold
+    chown system system /sys/devices/platform/soc/soc:honeywell,mcu_defroster@0/mcu_defroster_duty_cycle
+    chown system system /sys/devices/platform/soc/soc:honeywell,mcu_defroster@0/mcu_defroster_enable
+    chown system system /sys/devices/platform/soc/soc:honeywell,mcu_defroster@0/mcu_defroster_mode
+    chown system system /sys/devices/platform/soc/soc:honeywell,mcu_defroster@0/mcu_defroster_state
+
+    chmod 0664 /sys/devices/platform/soc/soc:honeywell,mcu_defroster@0/mcu_defroster_low_temp_threshold
+    chmod 0664 /sys/devices/platform/soc/soc:honeywell,mcu_defroster@0/mcu_defroster_high_temp_threshold
+    chmod 0664 /sys/devices/platform/soc/soc:honeywell,mcu_defroster@0/mcu_defroster_duty_cycle
+    chmod 0664 /sys/devices/platform/soc/soc:honeywell,mcu_defroster@0/mcu_defroster_enable
+    chmod 0664 /sys/devices/platform/soc/soc:honeywell,mcu_defroster@0/mcu_defroster_mode
+    chmod 0664 /sys/devices/platform/soc/soc:honeywell,mcu_defroster@0/mcu_defroster_state
+
+## Backlight
+    chown system system /sys/class/leds/button-backlight/brightness
+
+#BatteryOptimizer
+    chown system system /sys/class/power_supply/battery/temp
+    chmod 664 /sys/class/power_supply/battery/temp
+
+#BatteryHotSwap
+    setprop persist.powermode.support false
+    setprop persist.vendor.hotswap.support true
+    setprop persist.sar.proximity.enable false
+    setprop persist.batteryhotswap.suspend true
+    chmod 0664 /sys/bus/i2c/drivers/ads1015/6-0048/in6_input
+    chown system system /sys/bus/i2c/drivers/ads1015/6-0048/in6_input
+    chmod 0664 /sys/bus/i2c/drivers/ads1015/6-0048/in4_input
+    chown system system /sys/bus/i2c/drivers/ads1015/6-0048/in4_input
+    chmod 0664 /sys/devices/platform/soc/soc:gpio_keys/battery_hotswap
+    chown system system /sys/devices/platform/soc/soc:gpio_keys/battery_hotswap
+    chmod 0664 /sys/module/qpnp_fg_gen3/parameters/wakeup_irq_en
+    chown system system /sys/module/qpnp_fg_gen3/parameters/wakeup_irq_en
+    chmod 0664 /sys/module/bcl_peripheral/parameters/fg_lmh_int_en
+    chown system system /sys/module/bcl_peripheral/parameters/fg_lmh_int_en
+    chmod 0664 /sys/module/qpnp_smb2/parameters/charger_wakeup_irq_en
+    chown system system /sys/module/qpnp_smb2/parameters/charger_wakeup_irq_en
+    chmod 0664 /sys/devices/platform/soc/c1b6000.i2c/i2c-6/6-0034/tca8418_status
+    chown system system /sys/devices/platform/soc/c1b6000.i2c/i2c-6/6-0034/tca8418_status
+    chown system system /sys/module/alarmtimer/parameters/alarm_wake_en
+    chown system system /sys/class/leds/green/suspend_off
+
+#Hall sensor
+    chown system system /dev/hall_sensor_status
+    chmod 0664 /dev/hall_sensor_status
+
+#Battery Auth
+    chown system system /sys/power/hon_battery/battery_auth/addr
+    chmod 0664 /sys/power/hon_battery/battery_auth/addr
+    chown system system /sys/power/hon_battery/battery_auth/mode
+    chmod 0664 /sys/power/hon_battery/battery_auth/mode
+    chown system system /sys/power/hon_battery/battery_auth/count
+    chmod 0664 /sys/power/hon_battery/battery_auth/count
+    chown system system /sys/power/hon_battery/battery_auth/data
+    chmod 0664 /sys/power/hon_battery/battery_auth/data
+    chown system system /dev/hon_battery_authentication
+    chmod 0664 /dev/hon_battery_authentication
+    chown system system /sys/class/power_supply/battery/input_suspend
+    chmod 664 /sys/class/power_supply/battery/input_suspend
+    chown system system /sys/class/power_supply/smb1351_battery/input_suspend
+    chmod 664 /sys/class/power_supply/smb1351_battery/input_suspend
+    chmod 0664 /sys/class/power_supply/battery/battery_charging_enabled
+    chown system system /sys/class/power_supply/battery/battery_charging_enabled
+    chmod 0664 /sys/class/power_supply/battery/cycle_count
+    chown system system /sys/class/power_supply/battery/cycle_count
+
+    chmod 0664 /sys/devices/platform/soc/800f000.qcom,spmi/spmi-0/spmi0-04/hon-accessory/vdock_mode
+    chown system system /sys/devices/platform/soc/800f000.qcom,spmi/spmi-0/spmi0-04/hon-accessory/vdock_mode
+
+on property:persist.vendor.model_CT60XP=true
+    setprop persist.sar.proximity.enable_CT60XP true
+
+on property:ro.vendor.honeywell.product.model=*
+   setprop ro.product.vendor.model ${ro.vendor.honeywell.product.model}
+   setprop ro.product.odm.model ${ro.vendor.honeywell.product.model}
+   setprop ro.vendor.hon.build.product ${ro.build.product}
+
+on property:ro.vendor.honeywell.product.name=*
+   setprop ro.product.vendor.name ${ro.vendor.honeywell.product.name}
+   setprop ro.product.odm.name ${ro.vendor.honeywell.product.name}
+
+on property:ro.vendor.honeywell.product.device=*
+   setprop ro.product.vendor.device ${ro.vendor.honeywell.product.device}
+   setprop ro.product.odm.device ${ro.vendor.honeywell.product.device}
+
+    chown system system /sys/devices/platform/soc/c1b8000.i2c/i2c-8/8-0061/power_supply/wipwr/ept
+    chmod 0664 /sys/devices/platform/soc/c1b8000.i2c/i2c-8/8-0061/power_supply/wipwr/ept
+
+    chown system system /sys/class/power_supply/battery/input_suspend2
+    chmod 0664 /sys/class/power_supply/battery/input_suspend2
+    chown system system /sys/class/power_supply/battery/charger_disable2
+    chmod 0664 /sys/class/power_supply/battery/charger_disable2
+
+on property:ro.hsm.model.num=CT60
+   # to open and shutdown the NI detection
+   setprop persist.sys.batt.ni true
+   # ANDROIDR-8860 enable lockscreen rotate because CT60 starts supporting display dock
+   setprop lockscreen.rot_override true
+   chmod 0664 /sys/class/leds/lcd-backlight_1/brightness
+   chown system system /sys/class/leds/lcd-backlight_1/brightness
+   setprop qemu.hw.mainkeys 1
+   setprop persist.vendor.hotswap.support false
+   setprop persist.batteryhotswap.suspend true
+   setprop persist.sar.proximity.enable_CT60XP false
+   chmod 0664 /sys/bus/i2c/drivers/ads1015/6-0048/chip_id
+   chown system system /sys/bus/i2c/drivers/ads1015/6-0048/chip_id
+
+on property:ro.hsm.model.num=CT40
+   setprop persist.sar.hotspot.enable_CT40 true
+   setprop persist.batteryhotswap.suspend true
+   setprop lockscreen.rot_override true
+   chmod 0664 /sys/bus/i2c/devices/4-004a/cfg_mode
+   chown system system /sys/bus/i2c/devices/4-004a/cfg_mode
+   chmod 0664 /sys/bus/i2c/devices/4-004b/cfg_mode
+   chown system system /sys/bus/i2c/devices/4-004b/cfg_mode
+   chmod 0664 /sys/bus/i2c/drivers/ads1015/6-0048/chip_id
+   chown system system /sys/bus/i2c/drivers/ads1015/6-0048/chip_id
+
+on property:ro.hsm.model.num=VM1A
+   chown system system /sys/class/leds/mcu_led/led_cmds
+   chmod 0666 /sys/class/leds/mcu_led/led_cmds
+
+on property:ro.hsm.model.num=VM3A
+   chown system system /sys/devices/platform/soc/soc:honeywell,mcu_sensor@0/flush
+   chmod 0664 /sys/devices/platform/soc/soc:honeywell,mcu_sensor@0/flush
+   chown system system /sys/class/leds/mcu_led/led_cmds
+   chmod 0666 /sys/class/leds/mcu_led/led_cmds
+
+# power mode nodes
+on property:persist.powermode.support=true
+   chown system system /sys/class/vm1a/pwmctrl/mode
+   chmod 0666 /sys/class/vm1a/pwmctrl/mode
+   chown system system /sys/devices/virtual/vm1a/pwmctrl/mode
+   chmod 0666 /sys/devices/virtual/vm1a/pwmctrl/mode
+   chown system system /sys/class/vm3a/pwmctrl/mode
+   chmod 0666 /sys/class/vm3a/pwmctrl/mode
+   chown system system /sys/devices/virtual/vm3a/pwmctrl/mode
+   chmod 0666 /sys/devices/virtual/vm3a/pwmctrl/mode
+
+on property:ro.hsm.model.num=TA60
+   setprop persist.sar.hotspot.enable_TA60 true
+   chmod 0664 /sys/devices/platform/soc/800f000.qcom,spmi/spmi-0/spmi0-04/hon-accessory/rt10a_md_dock_state
+   chown system system /sys/devices/platform/soc/800f000.qcom,spmi/spmi-0/spmi0-04/hon-accessory/rt10a_md_dock_state
+   chmod 0664 /sys/devices/platform/soc/800f000.qcom,spmi/spmi-0/spmi0-04/hon-accessory/com1_rts_state
+   chown system system /sys/devices/platform/soc/800f000.qcom,spmi/spmi-0/spmi0-04/hon-accessory/com1_rts_state
+   chmod 0664 /sys/devices/platform/soc/800f000.qcom,spmi/spmi-0/spmi0-04/hon-accessory/com2_rts_state
+   chown system system /sys/devices/platform/soc/800f000.qcom,spmi/spmi-0/spmi0-04/hon-accessory/com2_rts_state
+   chmod 0664 /sys/devices/platform/soc/800f000.qcom,spmi/spmi-0/spmi0-04/hon-accessory/com1_power_state
+   chown system system /sys/devices/platform/soc/800f000.qcom,spmi/spmi-0/spmi0-04/hon-accessory/com1_power_state
+   chmod 0664 /sys/devices/platform/soc/800f000.qcom,spmi/spmi-0/spmi0-04/hon-accessory/com2_power_state
+   chown system system /sys/devices/platform/soc/800f000.qcom,spmi/spmi-0/spmi0-04/hon-accessory/com2_power_state
+   setprop persist.vendor.hotswap.support true
+   setprop persist.batteryhotswap.suspend false
+   chown system system /sys/class/leds/wwan-led/brightness
+   chmod 0664 /sys/class/leds/wwan-led/brightness
+   chown system system /sys/class/leds/wwan-led/blink
+   chmod 0664 /sys/class/leds/wwan-led/blink
+   chown system system /sys/class/leds/wlan-led/brightness
+   chmod 0664 /sys/class/leds/wlan-led/brightness
+   write /sys/module/libcomposite/parameters/enable_self_power Y
+   write /sys/module/dwc3/parameters/enable_dwc3_u1u2 Y
+   chmod 0664 /sys/bus/i2c/drivers/ads1015/6-0048/chip_id
+   chown system system /sys/bus/i2c/drivers/ads1015/6-0048/chip_id
+   chmod 0664 /sys/devices/platform/soc/800f000.qcom,spmi/spmi-0/spmi0-04/hon-accessory/rt10a_gps_select
+   chown system system /sys/devices/platform/soc/800f000.qcom,spmi/spmi-0/spmi0-04/hon-accessory/rt10a_gps_select
+   chmod 0664 /sys/devices/platform/soc/c178000.i2c/i2c-4/4-002a/mode
+   chown system system /sys/devices/platform/soc/c178000.i2c/i2c-4/4-002a/mode
+
+on property:ro.hsm.model.num=TA60 && property:persist.vendor.gps.select=true
+    write /sys/devices/platform/soc/800f000.qcom,spmi/spmi-0/spmi0-04/hon-accessory/rt10a_gps_select 1
+
+on property:ro.hsm.model.num=CN85
+   setprop persist.vendor.hotswap.support true
+   setprop persist.batteryhotswap.suspend true
+   write /sys/module/libcomposite/parameters/enable_self_power Y
+   write /sys/module/dwc3/parameters/enable_dwc3_u1u2 Y
+   setprop persist.sar.proximity.enable true
+   chmod 0664 /sys/bus/i2c/drivers/ads1015/6-0048/chip_id
+   chown system system /sys/bus/i2c/drivers/ads1015/6-0048/chip_id
+   chown system system /dev/hall_sensor_status
+   chmod 0664 /dev/hall_sensor_status
+
+on property:ro.hsm.model.num=CK65
+   setprop persist.vendor.hotswap.support true
+   setprop persist.batteryhotswap.suspend false
+   chmod 0664 /sys/bus/i2c/drivers/ads1015/6-0048/chip_id
+   chown system system /sys/bus/i2c/drivers/ads1015/6-0048/chip_id
+
+on property:ro.hsm.model.num=CN80
+   setprop persist.vendor.hotswap.support true
+   setprop persist.batteryhotswap.suspend false
+   write /sys/module/libcomposite/parameters/enable_self_power Y
+   write /sys/module/dwc3/parameters/enable_dwc3_u1u2 Y
+   setprop persist.sar.proximity.enable true
+   chmod 0664 /sys/bus/i2c/drivers/ads1015/6-0048/chip_id
+   chown system system /sys/bus/i2c/drivers/ads1015/6-0048/chip_id
+   chown system system /dev/hall_sensor_status
+   chmod 0664 /dev/hall_sensor_status
+
+
+
+on property:sys.cts.verify.DeviceSuspendTestActivity.running=1
+   write /sys/devices/platform/soc/soc:honeywell,mcu_defroster@0/mcu_detect_cts 1
+
+on property:sys.cts.verify.DeviceSuspendTestActivity.running=0
+   write /sys/devices/platform/soc/soc:honeywell,mcu_defroster@0/mcu_detect_cts 0
+
+on property:persist.sys.scanhandle.gun.detected=*
+    setprop persist.vendor.scanhandle.gun.detected ${persist.sys.scanhandle.gun.detected}
+
+on property:persist.sys.ck65.gun.detected=*
+    setprop persist.vendor.ck65.gun.detected ${persist.sys.ck65.gun.detected}
+
+on property:persist.sys.ck65.gun.inserted=*
+    setprop persist.vendor.ck65.gun.inserted ${persist.sys.ck65.gun.inserted}
+
+import /vendor/etc/init/hw/init.scanled.rc
+
+on property:ro.hsm.model.num=VM1A
+   setprop persist.powermode.support true
+   chown system system /sys/devices/platform/soc/soc:honeywell,mcu_sensor@0/flush
+   chmod 0664 /sys/devices/platform/soc/soc:honeywell,mcu_sensor@0/flush
+   chown system system /sys/class/leds/mcu_led/led_cmds
+   chmod 0664 /sys/class/leds/mcu_led/led_cmds
+   chown system system /sys/devices/platform/soc/soc:honeywell,mcu_sensor@0/enable
+   chmod 0664 /sys/devices/platform/soc/soc:honeywell,mcu_sensor@0/enable
+   chmod 0664 /sys/bus/i2c/drivers/ads1015/6-0048/chip_id
+   chown system system /sys/bus/i2c/drivers/ads1015/6-0048/chip_id
+
+on property:ro.hsm.model.num=VM3A
+   setprop persist.powermode.support true
+   chown system system /sys/devices/platform/soc/soc:honeywell,mcu_sensor@0/flush
+   chmod 0664 /sys/devices/platform/soc/soc:honeywell,mcu_sensor@0/flush
+   chown system system /sys/class/leds/mcu_led/led_cmds
+   chmod 0664 /sys/class/leds/mcu_led/led_cmds
+   chown system system /sys/devices/platform/soc/soc:honeywell,mcu_sensor@0/enable
+   chmod 0664 /sys/devices/platform/soc/soc:honeywell,mcu_sensor@0/enable
+   chmod 0664 /sys/bus/i2c/drivers/ads1015/6-0048/chip_id
+   chown system system /sys/bus/i2c/drivers/ads1015/6-0048/chip_id
+
+# HSM Counters - record reset reason
+service count_bootreason /vendor/bin/sh init.hsmcounter.record_boot_reason.sh
+    class main
+    user  system
+    group shell
+    oneshot
+    disabled
+
+on property:sys.boot_completed=1
+    start count_bootreason
+    start sensorcal-apply
+    setprop ro.hsm.boot_successful "1"
+    copy mnt/vendor/persist/sensors/sns.reg mnt/vendor/persist/sensors/sns_shadow.reg
+    chown system system /mnt/vendor/persist/sensors/sns_shadow.reg
+    chmod 0664 /mnt/vendor/persist/sensors/sns_shadow.reg
+    rm mnt/vendor/persist/sensors/sns.reg
+
+# HSM Counter read/write to eeprom service
+service eeprom /system/vendor/bin/hsmcounter_eeprom
+    class main
+    user root
+    group root system diag
+
+#unattended mode
+service doze-enable /system/bin/doze-on-off.sh enable
+    class core
+    writepid /dev/cpuset/system-background/tasks
+    seclabel u:r:doze_on_off:s0
+    user root
+    group shell
+    disabled
+    oneshot
+
+service doze-disable /system/bin/doze-on-off.sh disable
+    class core
+    writepid /dev/cpuset/system-background/tasks
+    seclabel u:r:doze_on_off:s0
+    user root
+    group shell
+    disabled
+    oneshot
+
+on property:persist.vendor.hsm.pow.unattended=true
+    write /sys/power/wake_lock unattended-wl
+    start doze-disable
+
+on property:persist.vendor.hsm.pow.unattended=false
+    write /sys/power/wake_unlock unattended-wl
+    start doze-enable
+
+
+#on post-fs
+#   start logdumpd
+
+on post-fs-data
+
+	# IIO
+    chmod 0644 /sys/bus/iio/devices/iio:device0/in_accel_sampling_frequency
+    chown system system  /sys/bus/iio/devices/iio:device0/in_accel_sampling_frequency
+    chmod 0644 /sys/bus/iio/devices/iio:device0/in_accel_filter_low_pass_3db_frequency
+    chown system system /sys/bus/iio/devices/iio:device0/in_accel_filter_low_pass_3db_frequency
+    chmod 0644 /sys/bus/iio/devices/iio:device0/in_accel_x_raw
+    chown system system /sys/bus/iio/devices/iio:device0/in_accel_x_raw
+    chmod 0644 /sys/bus/iio/devices/iio:device0/in_accel_y_raw
+    chown system system /sys/bus/iio/devices/iio:device0/in_accel_y_raw
+    chmod 0644 /sys/bus/iio/devices/iio:device0/in_accel_z_raw
+    chown system system /sys/bus/iio/devices/iio:device0/in_accel_z_raw
+    chmod 0644 /sys/bus/iio/devices/iio:device0/scan_elements/in_accel_x_en
+    chown system system /sys/bus/iio/devices/iio:device0/scan_elements/in_accel_x_en
+    chmod 0644 /sys/bus/iio/devices/iio:device0/scan_elements/in_accel_y_en
+    chown system system /sys/bus/iio/devices/iio:device0/scan_elements/in_accel_y_en
+    chmod 0644 /sys/bus/iio/devices/iio:device0/scan_elements/in_accel_z_en
+    chown system system /sys/bus/iio/devices/iio:device0/scan_elements/in_accel_z_en
+    chmod 0644 /sys/bus/iio/devices/iio:device0/buffer/enable
+    chown system system /sys/bus/iio/devices/iio:device0/buffer/enable
+    chmod 0644 /sys/bus/iio/devices/iio:device0/buffer/length
+    chown system system /sys/bus/iio/devices/iio:device0/buffer/length
+    chmod 0644 /sys/bus/iio/devices/iio:device0/buffer/watermark
+    chown system system /sys/bus/iio/devices/iio:device0/buffer/watermark
+    chmod 0644 /sys/bus/iio/devices/iio:device0/trigger/current_trigger
+    chown system system /sys/bus/iio/devices/iio:device0/trigger/current_trigger
+    chmod 0644 /sys/bus/iio/devices/iio:device0/buffer/enable
+    chown system system /sys/bus/iio/devices/iio:device0/buffer/enable
+    chmod 644 /sys/bus/iio/devices/iio:device0/output_data_mode
+    chown system system /sys/bus/iio/devices/iio:device0/output_data_mode
+    chmod 644 /sys/bus/iio/devices/iio:device0/peak_fifo_mode_enable
+    chown system system /sys/bus/iio/devices/iio:device0/peak_fifo_mode_enable
+    chmod 644 /sys/bus/iio/devices/iio:device0/trigger_stream_output_time
+    chown system system /sys/bus/iio/devices/iio:device0/trigger_stream_output_time
+
+    chmod 0644 /dev/iio:device0
+    chown system system /dev/iio:device0
+
+on property:sys.shutdown.requested=*
+    start logdumpd
+
+# Logcat dump daemon, dumps logs to logdump partition
+service logdumpd /system/bin/logdumpd -b all -v threadtime -D
+    class core
+    writepid /dev/cpuset/system-background/tasks
+    seclabel u:r:logdumpd:s0
+    group shell sdcard_rw everybody media_rw
+    disabled
+    oneshot
+
+service heaterd /vendor/bin/heaterd
+    class late_start
+    user system
+    group system
+    oneshot
+
+# HXLogger
+service hxloggerserver /vendor/bin/hxloggerserver
+    class main
+    user root
+    group root
+
+service hxlogger_logdumpd /system/bin/hxlogger_logdumpd.sh
+    class core
+    writepid /dev/cpuset/system-background/tasks
+    seclabel u:r:hxlogger_logdumpd:s0
+    user  root
+    group shell sdcard_rw everybody media_rw
+    disabled
+    oneshot
+
+on property:persist.vendor.hsm.logdumpd.filepath=*
+   start hxlogger_logdumpd
+
+service hxlogger_tcpdumpd /system/bin/hxlogger_tcpdumpd.sh
+    class core
+    writepid /dev/cpuset/system-background/tasks
+    seclabel u:r:hxlogger_tcpdumpd:s0
+    user  root
+    group shell sdcard_rw everybody media_rw
+    disabled
+    oneshot
+
+service hxlogger_tombstone /system/bin/hxlogger_daemon_copy.sh tombstones
+    class core
+    writepid /dev/cpuset/system-background/tasks
+    seclabel u:r:hxlogger_daemon_copy:s0
+    user  root
+    group shell everybody system sdcard_rw log
+    disabled
+    oneshot
+
+on property:persist.vendor.hsm.tombstone.filepath=*
+    start hxlogger_tombstone
+
+
+on property:persist.vendor.hsm.tcpdumpd.operation=start
+   start hxlogger_tcpdumpd
+
+on property:persist.vendor.hsm.tcpdumpd.operation=stop
+   stop hxlogger_tcpdumpd
+
+#dumpsys audio
+service hxlogger_dumpsys_audio /system/bin/hxlogger_dumpsys.sh audio
+    class core
+    writepid /dev/cpuset/system-background/tasks
+    seclabel u:r:hxlogger_dumpsys:s0
+    user  root
+    group shell sdcard_rw everybody media_rw
+    disabled
+    oneshot
+
+on property:persist.vendor.hsm.dumpsys.audio.cmd=true
+   start hxlogger_dumpsys_audio
+   setprop persist.vendor.hsm.dumpsys.audio.cmd false
+
+
+#dumpsys wifi
+service hxlogger_dumpsys_wifi /system/bin/hxlogger_dumpsys.sh wifi
+    class core
+    writepid /dev/cpuset/system-background/tasks
+    seclabel u:r:hxlogger_dumpsys:s0
+    user  root
+    group shell sdcard_rw everybody media_rw
+    disabled
+    oneshot
+
+on property:persist.vendor.hsm.dumpsys.wifi.cmd=true
+   start hxlogger_dumpsys_wifi
+   setprop persist.vendor.hsm.dumpsys.wifi.cmd false
+
+
+#dumpsys location
+service hxlogger_dumpsys_location /system/bin/hxlogger_dumpsys.sh location
+    class core
+    writepid /dev/cpuset/system-background/tasks
+    seclabel u:r:hxlogger_dumpsys:s0
+    user  root
+    group shell sdcard_rw everybody media_rw
+    disabled
+    oneshot
+
+on property:persist.vendor.hsm.dumpsys.location.cmd=true
+   start hxlogger_dumpsys_location
+   setprop persist.vendor.hsm.dumpsys.location.cmd false
+
+
+#dumpsys battery
+service hxlogger_dumpsys_battery /system/bin/hxlogger_dumpsys.sh battery
+    class core
+    writepid /dev/cpuset/system-background/tasks
+    seclabel u:r:hxlogger_dumpsys:s0
+    user  root
+    group shell sdcard_rw everybody media_rw
+    disabled
+    oneshot
+
+on property:persist.vendor.hsm.dumpsys.battery.cmd=true
+   start hxlogger_dumpsys_battery
+   setprop persist.vendor.hsm.dumpsys.battery.cmd false
+
+
+#dumpsys wifiscanner
+service hxlogger_dumpsys_wifiscanner /system/bin/hxlogger_dumpsys.sh wifiscanner
+    class core
+    writepid /dev/cpuset/system-background/tasks
+    seclabel u:r:hxlogger_dumpsys:s0
+    user  root
+    group shell sdcard_rw everybody media_rw
+    disabled
+    oneshot
+
+on property:persist.vendor.hsm.dumpsys.wifiscanner.cmd=true
+   start hxlogger_dumpsys_wifiscanner
+   setprop persist.vendor.hsm.dumpsys.wifiscanner.cmd false
+
+
+#dumpsys nfc
+service hxlogger_dumpsys_nfc /system/bin/hxlogger_dumpsys.sh nfc
+    class core
+    writepid /dev/cpuset/system-background/tasks
+    seclabel u:r:hxlogger_dumpsys:s0
+    user  root
+    group shell sdcard_rw everybody media_rw
+    disabled
+    oneshot
+
+on property:persist.vendor.hsm.dumpsys.nfc.cmd=true
+   start hxlogger_dumpsys_nfc
+   setprop persist.vendor.hsm.dumpsys.nfc.cmd false
+
+#dumpsys power
+service hxlogger_dumpsys_power /system/bin/hxlogger_dumpsys.sh power
+    class core
+    writepid /dev/cpuset/system-background/tasks
+    seclabel u:r:hxlogger_dumpsys:s0
+    user  root
+    group shell sdcard_rw everybody media_rw
+    disabled
+    oneshot
+
+on property:persist.vendor.hsm.dumpsys.power.cmd=true
+   start hxlogger_dumpsys_power
+   setprop persist.vendor.hsm.dumpsys.power.cmd false
+
+service hxlogger_kerdynalog /system/bin/hxlogger_copy.sh kernel_dynamic_logs
+    class core
+    writepid /dev/cpuset/system-background/tasks
+    seclabel u:r:hxlogger_copy:s0
+    user  root
+    group shell
+    disabled
+    oneshot
+
+on property:persist.vendor.hsm.kerdynalog.requestcmd=*
+    start hxlogger_kerdynalog
+
+on property:persist.sys.dm.usbhost.disallow=true
+   write /sys/devices/platform/soc/a800000.ssusb/hon_usb_host_ctrl 0
+
+on property:persist.sys.dm.usbhost.disallow=false
+   write /sys/devices/platform/soc/a800000.ssusb/hon_usb_host_ctrl 1
+
+on property:persist.sys.dm.usbhost.class.blacklist=*
+   write /sys/devices/platform/soc/a800000.ssusb/hon_usb_host_class_blacklist ${persist.sys.dm.usbhost.class.blacklist}
+
+#Enable Modem SSR
+service enable_modem_ssr /vendor/bin/init.dubai.modem.ssr.sh
+    disabled
+    user root
+    oneshot
+
+#Set WWAN compliance version
+service set_wwan_version /vendor/bin/init.dubai.wwan.numbering.sh
+    disabled
+    user root
+    oneshot
+
+on property:persist.vendor.hsm.modem.ssr=true
+   start enable_modem_ssr
+
+service set_modem_configs_from_hlos /vendor/bin/init.dubai.modem.configs_from_hlos.sh
+    class main
+    user root
+    group root shell vendor_rfs_shared
+    oneshot
+    disabled
+
+on property:ro.hon.plat.wwan=true
+   start set_wwan_version
+
+service dmclient /system/bin/dmclient
+    disabled
+    user system
+    group system radio net_raw net_admin inet sdcard_rw media_rw
+
+on property:persist.vendor.omadm.dmclient=Verizon
+    start dmclient
+
+on property:persist.vendor.omadm.dmclient=None
+    stop dmclient
+
+on post-fs-data
+    chown root external_storage /license
+
+on property:ro.hon.plat.wwan=true && property:sys.boot_completed=1
+   start modem_info_svc
+
+service modem_info_svc /system/bin/diag_dci_modem_info
+    class main
+    user root
+    group root system radio
+    disabled
+    oneshot
+
+on property:ro.hsm.model.num=CK65 && property:sys.boot_completed=1
+    start audiocal-apply
+
+service audiocal-apply /system/bin/max98390_cal_apply.sh
+     class core
+     seclabel u:r:maxim_cal_apply:s0
+     user root
+     group shell system audio
+     disabled
+     oneshot
+
+on property:persist.vendor.hsm.batt.fastcharge=false
+     write /sys/devices/platform/soc/800f000.qcom,spmi/spmi-0/spmi0-04/hon-accessory/fastcharge 0
+
+on property:persist.vendor.hsm.batt.fastcharge=true
+     write /sys/devices/platform/soc/800f000.qcom,spmi/spmi-0/spmi0-04/hon-accessory/fastcharge 1
+
+#usb cc pin for CT40P and bcl full performance mode
+on property:ro.boot.model=CT40P && property:sys.boot_completed=1
+    write /sys/bus/i2c/devices/6-0060/cc_rd_rp_enable ${persist.vendor.hsm.usbccpin}
+    write /sys/bus/i2c/devices/6-001d/cc_rd_rp_enable ${persist.vendor.hsm.usbccpin}
+    write /sys/devices/platform/soc/c1b6000.i2c/i2c-6/6-0060/mode_select ${persist.vendor.hsm.usbcertmode}
+    write /sys/devices/platform/soc/800f000.qcom,spmi/spmi-0/spmi0-00/800f000.qcom,spmi:qcom,pm660@0:qcom,qpnp-smb2/typec_icl_certification ${persist.vendor.hsm.usbcertmode}
+    write /sys/devices/platform/soc/800f000.qcom,spmi/spmi-0/spmi0-00/800f000.qcom,spmi:qcom,pm660@0:bcl@4200/full_performance_mode ${persist.vendor.hon.fullperformancemode}
+
+on property:ro.boot.model=CT40P && property:persist.vendor.hsm.usbccpin=*
+    write /sys/bus/i2c/devices/6-0060/cc_rd_rp_enable ${persist.vendor.hsm.usbccpin}
+    write /sys/bus/i2c/devices/6-001d/cc_rd_rp_enable ${persist.vendor.hsm.usbccpin}
+
+# USB CC pin for RT10A
+on property:ro.boot.model=TA60 && property:sys.boot_completed=1
+    write /sys/devices/platform/soc/800f000.qcom,spmi/spmi-0/spmi0-00/800f000.qcom,spmi:qcom,pm660@0:qcom,qpnp-smb2/typec_module_disable ${persist.vendor.hsm.usbccpin}
+
+on property:ro.boot.model=TA60 && property:persist.vendor.hsm.usbccpin=*
+    write /sys/devices/platform/soc/800f000.qcom,spmi/spmi-0/spmi0-00/800f000.qcom,spmi:qcom,pm660@0:qcom,qpnp-smb2/typec_module_disable ${persist.vendor.hsm.usbccpin}
+
+
+on property:persist.vendor.hsm.pmic.s2_type=*
+    write /sys/devices/platform/soc/800f000.qcom,spmi/spmi-0/spmi0-00/800f000.qcom,spmi:qcom,pm660@0:qcom,power-on@800/pwr_hard_reset_enable ${persist.vendor.hsm.pmic.s2_type} 
+
+on property:sys.boot_completed=1
+    write /sys/devices/platform/soc/800f000.qcom,spmi/spmi-0/spmi0-00/800f000.qcom,spmi:qcom,pm660@0:qcom,power-on@800/pwr_hard_reset_enable ${persist.vendor.hsm.pmic.s2_type}
+
+#usb cert mode
+on property:ro.boot.model=CT40P && property:persist.vendor.hsm.usbcertmode=*
+    write /sys/devices/platform/soc/c1b6000.i2c/i2c-6/6-0060/mode_select ${persist.vendor.hsm.usbcertmode}
+    write /sys/devices/platform/soc/800f000.qcom,spmi/spmi-0/spmi0-00/800f000.qcom,spmi:qcom,pm660@0:qcom,qpnp-smb2/typec_icl_certification ${persist.vendor.hsm.usbcertmode}
+
+#bcl full performance mode
+on property:ro.boot.model=CT40P && property:persist.vendor.hon.fullperformancemode=*
+ write /sys/devices/platform/soc/800f000.qcom,spmi/spmi-0/spmi0-00/800f000.qcom,spmi:qcom,pm660@0:bcl@4200/full_performance_mode ${persist.vendor.hon.fullperformancemode}
+
+on property:ro.boot.model=TA60 && property:sys.boot_completed=1
+    write /sys/module/qpnp_smb2/parameters/ufp_only_en ${persist.vendor.hsm.usbccpin}
+    write /sys/bus/i2c/devices/8-006b/typec_chg_enable ${persist.vendor.hsm.usbccpin}
+
+on property:ro.boot.model=TA60 && property:persist.vendor.hsm.usbccpin=*
+    write /sys/module/qpnp_smb2/parameters/ufp_only_en ${persist.vendor.hsm.usbccpin}
+    write /sys/bus/i2c/devices/8-006b/typec_chg_enable ${persist.vendor.hsm.usbccpin}

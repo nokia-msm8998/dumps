@@ -1,0 +1,22 @@
+service wpa_supplicant_eth /vendor/bin/hw/wpa_supplicant \
+    -Dwired -ieth0 -S android.hardware.eth.supplicant -c/data/vendor/wifi/wpa_supplicant_eth.conf
+    class main
+    user root
+    group shell
+    disabled
+    oneshot
+
+on property:persist.ethernet.link.state=true && property:persist.ethernet.state=true && property:persist.ethernet.conf_file.state=true
+    copy /data/misc/wifi/wpa_supplicant_eth.conf /data/vendor/wifi/wpa_supplicant_eth.conf
+    chmod 0666 /data/vendor/wifi/wpa_supplicant_eth.conf
+    chown system system /data/vendor/wifi/wpa_supplicant_eth.conf
+    start wpa_supplicant_eth
+
+on property:persist.ethernet.state=false
+    stop wpa_supplicant_eth
+
+on property:persist.ethernet.link.state=false
+    stop wpa_supplicant_eth
+
+on property:persist.ethernet.conf_file.state=false
+    stop wpa_supplicant_eth

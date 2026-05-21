@@ -1,0 +1,12 @@
+on early-init
+    chown system system /sys/devices/virtual/misc/hon_config/features
+    chmod 664 /sys/devices/virtual/misc/hon_config/features
+    mount none /sys/devices/virtual/misc/hon_config/features /vendor/etc/permissions/honeywell_features.xml bind dmask=0000 fmask=0000
+    start hon_feature
+    
+service hon_feature /vendor/bin/hon_feature
+    class main
+    user system
+    group system
+    oneshot
+

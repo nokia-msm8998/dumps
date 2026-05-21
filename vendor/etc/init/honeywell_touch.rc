@@ -1,0 +1,55 @@
+on property:ro.hsm.model.num=VM1A
+    chown root system /dev/hidraw0
+    chmod 0664 /dev/hidraw0
+	start usbtouch
+
+on property:ro.vendor.honeywell.product.model=TA60A && property:sys.boot_completed=1
+	start touchmode
+
+on property:ro.vendor.honeywell.product.model=VM3A
+    chown root system /dev/hidraw0
+    chmod 0664 /dev/hidraw0
+    start usbtouch
+
+on property:sys.boot_completed=1 && property:ro.vendor.hon.touch.usb.vendor=EETI
+	mkdir /data/vendor/eGTouch 0771 root root
+	copy /vendor/etc/eGTouchA.ini /data/vendor/eGTouch/eGTouchA.ini
+	start eGTouchD
+
+on property:vold.decrypt=trigger_reset_main && property:sys.boot_completed=1 && property:ro.vendor.hon.touch.usb.vendor=EETI
+	exec u:r:eGTouchD:s0 root root -- /system/vendor/bin/eGTouchD -k
+
+on post-fs-data && property:ro.vendor.hon.touch.usb.vendor=EETI
+	mkdir /data/vendor/eGTouch 0771 root root
+	copy /vendor/etc/eGTouchA.ini /data/vendor/eGTouch/eGTouchA.ini
+	start eUpdatePro
+
+on property:ro.vendor.hon.touch.ver.fw=* && property:ro.vendor.hon.touch.usb.vendor=EETI
+	start eGTouchD
+
+on property:vendor.hon.usb.touch.retry=* && property:ro.vendor.hon.touch.usb.vendor=EETI
+	start eGTouchD
+
+service usbtouch /system/vendor/bin/sh /system/vendor/bin/usb-touch.sh
+	disabled
+	user root
+	group root
+	oneshot
+
+service touchmode /system/vendor/bin/sh /system/vendor/bin/touch-mode.sh
+	disabled
+	user root
+	group root system
+	oneshot
+
+service eGTouchD /system/vendor/bin/eGTouchD -P /dev/hidraw0
+	disabled
+	user root
+	group root bluetooth uhid
+	oneshot
+
+service eUpdatePro /system/vendor/bin/eUpdatePro.sh
+	disabled
+	user root
+	group root
+	oneshot

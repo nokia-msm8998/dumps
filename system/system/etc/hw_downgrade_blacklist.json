@@ -1,0 +1,638 @@
+ {
+   "restriction": {
+    "CK65": {
+     "ADCOVERTOR": {
+      "SGM58031XTD10G": ["O-32","P-17","Q-10"]
+    },
+     "ALLBLOCK": ["N-99"],
+     "CAMERA": {
+      "Camera_BYDAR1337": ["O-25","P-09"],
+      "Camera_HEGAR1337": ["P-23","Q-21","R-16","S-08","T-02"]
+    },
+     "COMBLOCK": [
+      {
+        "PARTNUM": ["NonCamera"],
+        "SCANENGINE": ["94993801"],
+        "BLOCK": ["R-07"]
+      }
+     ],
+     "GSENSOR": {
+      "ICM42607": ["O-35","P-20","Q-15","R-06"],
+      "BMI270": ["O-35","P-20","Q-15","R-06"]
+    },
+     "LCD": {
+      "LCD_GPS5040LX10G": ["O-25","P-08"],
+      "LCD_ST7701S": ["O-30","P-16","Q-09","R-07"]
+    },
+     "NFC": {
+      "NQ410": ["O-35","P-20","Q-15","R-06"]
+    },
+     "PSENSOR": {
+      "FPS3-4024135D01MJ": ["O-32","P-17","Q-10"],
+      "LTR-X1303": ["O-32","P-17","Q-10"]
+    },
+     "SCANENGINE": {
+      "94993801": ["O-36","P-20","Q-15","R-06"],
+      "8A488E85": ["O-35","P-20","Q-15","R-06","S-05"]
+    },
+     "SCANNER": {
+      "Imager_n680x": ["O-18","P-04"],
+      "Imager_n680xdf": ["O-99","P-99","Q-06"]
+    },
+     "SOM": {
+      "SOM2": ["O-19","P-06"],
+      "SOM4": ["O-21","P-06"]
+    },
+     "WLANFEM": {
+      "WLAN_FEM_murata": ["O-29"]
+    }
+   },
+    "CK65P3": {
+     "ALLBLOCK": ["N-99","O-99","P-99","Q-08"],
+     "GSENSOR": {
+      "ICM42607": ["Q-15","R-06"],
+      "BMI270": ["Q-15","R-06"]
+    },
+     "COMBLOCK": [
+      {
+        "PARTNUM": ["NonCamera"],
+        "SCANENGINE": ["94993801"],
+        "BLOCK": ["R-07"]
+      }
+     ],
+     "LCD": {
+      "LCD_ST7701S": ["Q-09","R-07","S-03"]
+    },
+     "NFC": {
+      "NQ410": ["Q-15","R-06"]
+    },
+     "SCANENGINE": {
+      "94993801": ["Q-15","R-06"],
+      "8A488E85": ["Q-15","R-06","S-05"]
+    },
+     "CAMERA": {
+      "Camera_HEGAR1337": ["Q-21","R-16","S-08","T-02"]
+    }
+   },
+    "CN80": {
+     "KEYMASTER": {
+      "KM4": ["N-99","O-99","P-22","Q-18","R-11","S-03"]
+    },
+     "CAMERA": {
+      "Camera_BYDAR1337": ["N-22","O-26","P-11","Q-99"]
+    },
+     "MEMORY": {
+      "Memory_Micron_53E768M32D2NP_3G": ["N-27","O-37","P-22","Q-18","R-12","S-04"]
+    },
+     "SOM": {
+      "SOM4": ["N-22","O-21","P-07"]
+    }
+   },
+    "CN80G": {
+     "ALLBLOCK": ["P-07","Q-99","R-99","S-99","T-03"],
+     "CAMERA": {
+      "Camera_BYDAR1337": ["P-12"]
+    },
+     "MEMORY": {
+      "Memory_Micron_53E768M32D2NP_3G": ["P-22","R-12","S-04"]
+    }
+   },
+    "CN85": {
+     "ALLBLOCK": ["N-99","P-99","Q-99"],
+     "CAMERA": {
+      "Camera_BYDAR1337": ["O-26"]
+    },
+     "LCD": {
+      "LCD_HX8394F_GP": ["O-34","R-07"]
+    },
+     "MEMORY": {
+      "Memory_Micron_53E768M32D2NP_3G": ["O-37","R-12","S-04"]
+    }
+   },
+    "CT40": {
+     "ADCOVERTOR": {
+      "SGM58031XTD10G": ["N-27","O-34","P-20","Q-15","R-06"]
+    },
+     "AUDIOPA": {
+      "MAX98937": ["N-28","O-35","P-20","Q-15","R-06"]
+    },
+     "CAMERA": {
+      "Camera_BYDAR1337": ["N-21","O-25","P-09"]
+    },
+     "KEYMASTER": {
+      "KM4": ["N-99","O-99","P-22","Q-18","R-11","S-03"]
+    },
+     "LCD": {
+      "LCD_ILI9881C": ["N-24","O-28","P-14","Q-07"],
+      "LCD_TD4100": ["N-20","O-19","P-06"]
+    },
+     "NFC": {
+      "NQ410": ["N-27","O-34","P-20","Q-15","R-06"]
+    },
+     "PSENSOR": {
+      "FPS3-4024135D01MJ": ["N-27","O-34","P-20","Q-15","R-06"],
+      "LTR-X1303": ["N-27","O-34","P-20","Q-15","R-06"]
+    },
+     "SCANENGINE": {
+      "8A488E85": ["O-35","P-20","Q-15","R-06","S-05"]
+    },
+     "SCANNER": {
+      "Imager_n680x": ["N-99","O-21","P-06"],
+      "Imager_s0703ve": ["N-99","O-33","P-18","Q-11","R-03"]
+    },
+     "SOM": {
+      "SOM2": ["N-20","O-19","P-06"],
+      "SOM4": ["N-22","O-21","P-06"]
+    },
+     "WLANFEM": {
+      "WLAN_FEM_murata": ["N-27","O-34","P-20","Q-15","R-06"]
+    }
+   },
+    "CT40G2": {
+     "ADCOVERTOR": {
+      "SGM58031XTD10G": ["N-27","O-34","P-20","Q-15","R-06"]
+    },
+     "ALLBLOCK": ["N-99"],
+     "CAMERA": {
+      "Camera_BYDAR1337": ["O-25","P-09"]
+    },
+     "AUDIOPA": {
+      "MAX98937": ["N-28","O-35","P-20","Q-15","R-06"]
+    },
+     "LCD": {
+      "LCD_ILI9881C": ["O-28","P-14","Q-07"],
+      "LCD_TD4100": ["O-19","P-06"]
+    },
+     "NFC": {
+      "NQ410": ["N-27","O-34","P-20","Q-15","R-06"]
+    },
+     "PSENSOR": {
+      "FPS3-4024135D01MJ": ["N-27","O-34","P-20","Q-15","R-06"],
+      "LTR-X1303": ["N-27","O-34","P-20","Q-15","R-06"]
+    },
+     "SCANENGINE": {
+      "8A488E85": ["N-27","O-35","P-20","Q-15","R-06","S-05"]
+    },
+     "SCANNER": {
+      "Imager_n680x": ["O-21","P-06"],
+      "Imager_s0703ve": ["O-33","P-18","Q-11","R-03"]
+    },
+     "SOM": {
+      "SOM2": ["O-19","P-06"],
+      "SOM4": ["O-21","P-06"]
+    },
+     "WLANFEM": {
+      "WLAN_FEM_murata": ["N-27","O-34","P-20","Q-15","R-06"]
+    }
+   },
+    "CT40P": {
+     "ADCOVERTOR": {
+      "SGM58031XTD10G": ["N-27","O-34","P-20","Q-15","R-06"]
+    },
+     "ALLBLOCK": ["N-99","O-99","P-07"],
+     "CAMERA": {
+      "Camera_BYDAR1337": ["P-09"],
+      "Camera_HEGAR1337": ["P-23","Q-21","R-16","S-08","T-02"]
+    },
+     "AUDIOPA": {
+      "MAX98937": ["N-28","O-35","P-20","Q-15","R-06"]
+    },
+     "COMBLOCK": [
+      {
+        "LCD": ["LCD_HX8399_Sharp"],
+        "TP": ["TP_MXT874U"],
+        "BLOCK": ["P-20", "Q-15", "R-06"]
+      }
+     ],
+     "LCD": {
+      "LCD_HX8399_BOE": ["P-17","Q-10"]
+    },
+     "NFC": {
+      "NQ410": ["N-27","O-34","P-20","Q-15","R-06"]
+    },
+     "PSENSOR": {
+      "FPS3-4024135D01MJ": ["N-27","O-34","P-20","Q-15","R-06"],
+      "LTR-X1303": ["N-27","O-34","P-20","Q-15","R-06"]
+    },
+     "SCANENGINE": {
+      "8A488E85": ["N-27","O-35","P-20","Q-15","R-06","S-05"]
+    },
+     "SCANNER": {
+      "Imager_s0703ve": ["P-18","Q-11","R-03"]
+    },
+     "USBCCLOGIC": {
+      "PI5USB3021C": ["N-27","O-34","P-20","Q-15","R-06"]
+    },
+     "WLANFEM": {
+      "WLAN_FEM_murata": ["N-27","O-34","P-20","Q-15","R-06"]
+    }
+   },
+    "CT60": {
+     "ADCOVERTOR": {
+      "SGM58031XTD10G": ["N-27","O-34","P-19","Q-13","R-04"]
+    },
+     "AUDIOPA": {
+      "MAX98937": ["N-28","O-35","P-20","Q-15","R-06"]
+    },
+     "CAMERA": {
+      "Camera_BYDAR1337": ["N-22","O-26","P-11"],
+      "Camera_HolitechS5K3L6": ["N-27","O-34","P-18","Q-12","R-03"]
+    },
+     "COMBLOCK": [
+      {
+        "LCD": ["LCD_OTM1289A"],
+        "TP": ["TP_MXT640U"],
+        "TPFW": ["TP_MXT_FW_1.1.AA"],
+        "BLOCK": ["O-36", "P-21", "Q-16", "R-08"]
+      }
+    ],
+     "KEYMASTER": {
+      "KM4": ["N-99","O-99","P-22","Q-18","R-11","S-03"]
+    },
+     "LCD": {
+      "LCD_ILI9981D": ["N-24","O-28","P-14","Q-07"],
+      "LCD_ST7703I": ["N-24","O-28","P-14","Q-07"]
+    },
+     "GSENSOR": {
+      "ICM42607": ["N-27","O-34","P-19","Q-13","R-04"],
+      "BMI270": ["N-27","O-34","P-19","Q-13","R-04"]
+    },
+     "MEMORY": {
+      "Memory_Micron_53E768M32D2NP_3G": ["N-27","O-37","P-22","Q-18","R-12","S-04"]
+    },
+     "NFC": {
+      "NQ410": ["N-27","O-34","P-19","Q-13","R-04"]
+    },
+     "PressureSensor": {
+      "ICP-20100": ["N-27","O-34","P-19","Q-13","R-04"]
+    },
+     "PSENSOR": {
+      "FPS3-4024135D01MJ": ["N-27","O-34","P-19","Q-13","R-04"]
+    },
+     "SCANENGINE": {
+      "94993801": ["N-27","O-34","P-20","Q-15","R-06"]
+    },
+     "SCANNER": {
+      "Imager_s0703": ["N-99","O-99","P-16","Q-09","R-03"],
+      "Imager_s0703ve": ["N-27","O-34","P-18","Q-12","R-03"]
+    },
+     "SOM": {
+      "SOM4": ["N-22","O-21","P-06"]
+    },
+     "TP": {
+      "TP_MXT874U": ["N-24","O-28","P-14","Q-07"]
+    },
+     "WLANFEM": {
+      "WLAN_FEM_skyworks": ["N-25","O-31"],
+      "WLAN_FEM_murata": ["N-27","O-34","P-20","Q-15","R-06"]
+    }
+   },
+    "CT60G2": {
+     "ADCOVERTOR": {
+      "SGM58031XTD10G": ["N-27","O-34","P-19","Q-13","R-04"]
+    },
+     "ALLBLOCK": ["N-21"],
+     "AUDIOPA": {
+      "MAX98937": ["N-28","O-35","P-20","Q-15","R-06"]
+    },
+     "CAMERA": {
+      "Camera_BYDAR1337": ["N-22","O-26","P-11"],
+      "Camera_HolitechS5K3L6": ["N-27","O-34","P-18","Q-12","R-03"]
+    },
+     "KEYMASTER": {
+      "KM4": ["N-99","O-99","P-22","Q-18","R-11","S-03"]
+    },
+     "LCD": {
+      "LCD_ILI9981D": ["N-21","O-24","P-06"],
+      "LCD_ST7703I": ["N-24","O-28","P-14","Q-07"]
+    },
+     "GSENSOR": {
+      "ICM42607": ["N-27","O-34","P-19","Q-13","R-04"],
+      "BMI270": ["N-27","O-34","P-19","Q-13","R-04"]
+    },
+     "NFC": {
+      "NQ410": ["N-27","O-34","P-19","Q-13","R-04"]
+    },
+     "PressureSensor": {
+      "ICP-20100": ["N-27","O-34","P-19","Q-13","R-04"]
+    },
+     "PSENSOR": {
+      "FPS3-4024135D01MJ": ["N-27","O-34","P-19","Q-13","R-04"]
+    },
+     "SCANENGINE": {
+      "94993801": ["N-27","O-34","P-20","Q-15","R-06"]
+    },
+     "SCANNER": {
+      "Imager_s0703ve": ["N-27","O-34","P-18","Q-12","R-03"]
+    },
+     "SOM": {
+      "SOM4": ["N-22","O-21","P-06"]
+    },
+     "TP": {
+      "TP_MXT874U": ["N-24","O-28","P-14","Q-07"]
+    },
+     "WLANFEM": {
+      "WLAN_FEM_skyworks": ["N-25","O-31"],
+      "WLAN_FEM_murata": ["N-27","O-34","P-20","Q-15","R-06"]
+    }
+   },
+    "CT60XP": {
+     "ADCOVERTOR": {
+      "SGM58031XTD10G": ["N-27","O-34","P-19","Q-13","R-04"]
+    },
+     "ALLBLOCK": ["N-99","O-99"],
+     "AUDIOPA": {
+      "MAX98937": ["N-28","O-35","P-21","Q-15","R-06"]
+    },
+     "CAMERA": {
+      "Camera_BYDAR1337": ["P-11"],
+      "Camera_HolitechS5K3L6": ["P-18","Q-12","R-03"]
+    },
+     "KEYMASTER": {
+      "KM4": ["P-22","Q-18","R-11","S-03"]
+    },
+     "LCD": {
+      "LCD_ST7703I": ["P-14","Q-07"]
+    },
+     "GSENSOR": {
+      "ICM42607": ["N-27","O-34","P-19","Q-13","R-04"],
+      "BMI270": ["N-27","O-34","P-19","Q-13","R-04"]
+    },
+     "NFC": {
+      "NQ410": ["N-27","O-34","P-19","Q-13","R-04"]
+    },
+     "PressureSensor": {
+      "ICP-20100": ["N-27","O-34","P-19","Q-13","R-04"]
+    },
+     "PSENSOR": {
+      "FPS3-4024135D01MJ": ["N-27","O-34","P-19","Q-13","R-04"]
+    },
+     "SCANENGINE": {
+      "94993801": ["N-27","O-34","P-20","Q-15","R-06"],
+      "8A488E85": ["P-20","Q-15","R-06","S-05"]
+    },
+     "SCANNER": {
+      "Imager_n680x": ["P-06"],
+      "Imager_s0703": ["P-16","Q-09","R-03"],
+      "Imager_s0703ve": ["P-18","Q-12","R-03"]
+    },
+     "SOM": {
+      "SOM4": ["P-06"]
+    },
+     "TP": {
+      "TP_MXT874U": ["P-14","Q-07"]
+    },
+     "WLANFEM": {
+      "WLAN_FEM_murata": ["N-27","O-34","P-21","Q-15","R-06"]
+    }
+   },
+    "TA60": {
+     "ALLBLOCK": ["N-99","O-99","P-07"],
+     "LCD": {
+      "LCD_lt8911exb_edp": ["P-20","Q-15","R-06"]
+    },
+     "MEMORY": {
+      "Memory_Micron_53E1536M32D4DT_6G": ["P-99","Q-05","R-03"],
+      "Memory_Micron_53E2G32D4DT_8G": ["P-20","Q-15","R-06"]
+    },
+     "NFC": {
+      "NQ410": ["P-20","Q-15","R-06"]
+    },
+     "PSENSOR": {
+      "FPS3-4024135D01MJ": ["P-20","Q-15","R-06"],
+      "LTR-X1303": ["P-20","Q-15","R-06"]
+    },
+     "CAMERA": {
+      "Camera_HEGAR1337": ["P-24","Q-22","R-17","S-09","T-03"]
+    },
+     "SCANENGINE": {
+      "8A488E85": ["P-21","Q-16","R-07","S-05"]
+    }
+   },
+    "VM1A": {
+     "ALLBLOCK": ["N-99","P-07"],
+     "NFC": {
+        "NQ410": ["O-37","P-22","Q-17","R-10","S-03"]
+      },
+      "LCD": {
+        "LCD_LT9211": ["O-37","P-22","Q-17","R-10","S-03"]
+      },
+      "ADCOVERTOR": {
+        "SGM58031XTD10G": ["O-37","P-22","Q-17","R-10","S-03"]
+      },
+      "GSENSOR": {
+        "ICM42607": ["O-37","P-22","Q-17","R-10","S-03"],
+        "BMI270": ["O-37","P-22","Q-17","R-10","S-03"]
+      },
+     "SOM": {
+      "SOM4": ["O-37","P-22","Q-17","R-10","S-03"]
+    }
+   },
+    "VM3A": {
+     "ALLBLOCK": ["P-22","Q-17","R-10","S-03"],
+     "LCD": {
+      "LCD_121GMLC00H1": ["P-20","Q-14","R-05"]
+    }
+   }
+  },
+
+   "devinfo": {
+    "ADCOVERTOR": {
+     "property": "ro.hsm.hw.rev",
+     "index": "9,1",
+     "value": {
+      "A": "ADS1015IRUGR",
+      "B": "SGM58031XTD10G"
+    }
+   },
+    "AUDIOPA": {
+     "property": "ro.hsm.hw.rev",
+     "index": "10,1",
+     "value": {
+      "C": "MAX98937"
+    }
+   },
+    "CAMERA": {
+     "property": "ro.hsm.hw.rev",
+     "index": "5,1",
+     "value": {
+      "A": "Camera_TrulyOV13855",
+      "B": "Camera_BYDOV13855",
+      "C": "Camera_BYDAR1337",
+      "D": "Camera_HolitechS5K3L6",
+      "F": "Camera_HEGAR1337"
+    }
+   },
+    "GSENSOR": {
+     "property": "ro.hsm.hw.rev",
+     "index": "13,1",
+     "value": {
+      "A": "ICM42607",
+      "B": "BMI270"
+    }
+   },
+    "KEYMASTER": {
+     "property": "ro.boot.kmversion",
+     "value": {
+      "4": "KM4"
+    }
+   },
+    "LCD": {
+     "property": "ro.hsm.hw.rev",
+     "index": "3,1",
+     "value": {
+      "A": "LCD_FT8006",
+      "B": "LCD_TD4100",
+      "C": "LCD_ILI9981D",
+      "D": "LCD_OTM1289A",
+      "E": "LCD_HX8369",
+      "F": "LCD_HX8363",
+      "G": "LCD_HX8394",
+      "H": "LCD_N101UAN01",
+      "I": "LCD_GPS5040LX10G",
+      "J": "LCD_ILI9881C",
+      "K": "LCD_ST7703I",
+      "L": "LCD_ST7701S",
+      "M": "LCD_HX8399_BOE",
+      "N": "LCD_lt8911exb_edp",
+      "P": "LCD_121GMLC00H1",
+      "Q": "LCD_HX8399_Sharp",
+      "R": "LCD_HX8394F_GP",
+      "S": "LCD_LT9211"
+    }
+   },
+    "MEMORY": {
+     "property": "ro.hsm.hw.rev",
+     "index": "6,1",
+     "value": {
+      "A": "Memory_Samsung_K4UBE3D4AM_4G",
+      "B": "Memory_Hynix_H9HCNNNCPMALHR_4G",
+      "C": "Memory_Micron_53D1024M32D4DT_4G",
+      "D": "Memory_Micron_53B768M32D4NQ_3G",
+      "E": "Memory_Micron_53E768M32D4DT_3G",
+      "F": "Memory_Micron_53D512M32D2DS_2G",
+      "G": "Memory_Micron_53E1536M32D4DT_6G",
+      "H": "Memory_Micron_53E2G32D4DT_8G",
+      "M": "Memory_Micron_53E768M32D2NP_3G"
+    }
+   },
+    "NFC": {
+     "property": "ro.hsm.hw.rev",
+     "index": "11,1",
+     "value": {
+      "A": "NQ410"
+    }
+   },
+    "PARTNUM": {
+     "property": "ro.hsm.extpart.num",
+     "index": "11,1",
+     "value": {
+      "N": "NonCamera"
+    }
+   },
+    "PressureSensor": {
+     "property": "ro.hsm.hw.rev",
+     "index": "12,1",
+     "value": {
+      "A": "ICP-20100"
+    }
+   },
+    "proto": {
+     "property": "ro.hsm.hw.rev",
+     "index": "1,2",
+     "value": {
+      "D1": "DVT1",
+      "D2": "DVT2",
+      "D3": "DVT3",
+      "D4": "DVT4",
+      "E1": "EVT1",
+      "E2": "EVT2",
+      "E3": "EVT3",
+      "E4": "EVT4",
+      "M1": "MVT1",
+      "M2": "MVT2",
+      "M3": "MVT3",
+      "M4": "MVT4",
+      "MP": "MP"
+    }
+   },
+    "PSENSOR": {
+     "property": "ro.hsm.hw.rev",
+     "index": "8,1",
+     "value": {
+      "A": "APDS-9930",
+      "B": "LTR-X1303",
+      "C": "FPS3-4024135D01MJ"
+    }
+   },
+    "SCANENGINE": {
+     "property": "ro.hsm.hw.rev",
+     "index": "15,1",
+     "value": {
+      "A": "94993801",
+      "B": "8A488E85"
+    }
+   },
+    "SCANNER": {
+     "property": "ro.hon.plat.imager.sensor",
+     "value": {
+      "ex20": "Imager_ex20",
+      "n360x": "Imager_n360x",
+      "n660x": "Imager_n660x",
+      "n670x": "Imager_n670x",
+      "n680x": "Imager_n680x",
+      "n680xdf": "Imager_n680xdf",
+      "s0703": "Imager_s0703",
+      "s0703ve": "Imager_s0703ve"
+    }
+   },
+    "SOM": {
+     "property": "ro.hsm.hw.rev",
+     "index": "0,1",
+     "value": {
+      "1": "SOM1",
+      "2": "SOM2",
+      "3": "SOM3",
+      "4": "SOM4"
+    }
+   },
+    "TP": {
+     "property": "ro.hsm.hw.rev",
+     "index": "4,1",
+     "value": {
+      "A": "TP_FT8006",
+      "B": "TP_TD4100",
+      "C": "TP_MXT640U",
+      "D": "TP_MXT1664T3",
+      "E": "TP_EXC3146",
+      "F": "TP_EXC80W60",
+      "G": "TP_MXT874U"
+    }
+   },
+    "TPFW": {
+     "property": "ro.hon.touch.ver.fw",
+     "index": "0,6",
+     "value": {
+      "1.1.AA": "TP_MXT_FW_1.1.AA",
+      "1.1.E0": "TP_MXT_FW_1.1.E0",
+      "2.0.03": "TP_MXT_FW_2.0.03"
+    }
+   },
+    "USBCCLOGIC": {
+     "property": "ro.hsm.hw.rev",
+     "index": "14,1",
+     "value": {
+      "A": "PI5USB3021C"
+    }
+   },
+    "WLANFEM": {
+     "property": "ro.hsm.hw.rev",
+     "index": "7,1",
+     "value": {
+      "A": "WLAN_FEM_qorvo",
+      "B": "WLAN_FEM_murata",
+      "C": "WLAN_FEM_skyworks"
+    }
+   }
+  }
+ }

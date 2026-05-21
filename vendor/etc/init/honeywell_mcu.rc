@@ -1,0 +1,12 @@
+on post-fs-data
+	chmod 0664 /dev/hon_mcu
+	chown system system /dev/hon_mcu
+	chmod 0664 /sys/devices/platform/soc/soc:honeywell,mcu_core@0/auto_recover
+	chown system system /sys/devices/platform/soc/soc:honeywell,mcu_core@0/auto_recover
+	mkdir /data/vendor/misc/mcu 0771 system system
+
+service mcud /system/vendor/bin/mcud
+	class core
+	user system
+	group system
+	shutdown critical

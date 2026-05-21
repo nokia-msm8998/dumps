@@ -1,0 +1,9 @@
+mcfg_sw/generic/common/row/commerci/dataonly/mcfg_sw.mbn
+mcfg_sw/generic/na/verizon/hvolte/dataonly/mcfg_sw.mbn
+mcfg_sw/generic/na/att/volte/dataonly/mcfg_sw.mbn
+mcfg_sw/generic/na/sprint/commerci/dataonly/mcfg_sw.mbn
+mcfg_sw/generic/na/sprint/sprintcu/dataonly/mcfg_sw.mbn
+mcfg_sw/generic/na/att/cricket/dataonly/mcfg_sw.mbn
+mcfg_sw/generic/common/row/row_defa/dataonly/mcfg_sw.mbn
+mcfg_sw/generic/common/row/turkeyd/mcfg_sw.mbn
+

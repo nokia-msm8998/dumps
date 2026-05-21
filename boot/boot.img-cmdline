@@ -1,0 +1,1 @@
+androidboot.hardware=qcom user_debug=31 msm_rtb.filter=0x37 ehci-hcd.park=3 lpm_levels.sleep_disabled=1 sched_enable_hmp=1 sched_enable_power_aware=1 service_locator.enable=1 loop.max_part=7 firmware_class.path=/vendor/firmware_mnt/image buildvariant=user veritykeyid=id:489559031bc7ce83b5950e1502b1030763284cf9

@@ -1,0 +1,5 @@
+service mfg-mac-apply /system/vendor/bin/sh /system/vendor/bin/mfg-mac-apply.sh
+    class late_start
+    user root
+    oneshot
+

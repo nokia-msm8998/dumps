@@ -1,0 +1,19 @@
+# Copyright (C) 2015 Honeywell International Inc. All rights reserved
+#
+#
+#	Ideally we should have been happy with AOSP default layout file
+#     > frameworks/base/data/keyboards/Generic.kl
+#   However there is qcom file present which provides conflicting layout
+#     > device/qcom/sdm660_64/gpio-keys.kl
+#   Therefore introducing the minimal supported set of Keys for Dubai
+#
+key 115   VOLUME_UP
+key 114   VOLUME_DOWN
+key 212   CAMERA
+key 143   WAKEUP
+key 528   PUSHTOTALK
+key 59    F1
+key 172   HOME
+key 256   MIDDLESCAN
+key 689   HEADSETPTT
+

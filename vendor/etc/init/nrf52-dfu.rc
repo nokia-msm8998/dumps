@@ -1,0 +1,22 @@
+on property:persist.vendor.hon.nrf52.fw.upg=true && property:ro.vendor.honeywell.product.model=CT40
+	start nrf52-dfu
+
+on property:persist.vendor.hon.nrf52.fw.upg=true && property:ro.vendor.honeywell.product.model=CTX
+	start nrf52-dfu-ctx
+
+#on property:persist.vendor.hon.nrf52.fw.upg=false
+#	stop nrf52-dfu
+
+service nrf52-dfu /system/vendor/bin/nrf52-dfu ttyMSM1 /vendor/firmware/nrf52-fw.zip -v -v
+	class core
+	user system
+	group system
+	oneshot
+	disabled
+
+service nrf52-dfu-ctx /system/vendor/bin/nrf52-dfu ttyMSM0 /vendor/firmware/nrf52-fw.zip -v -v
+	class core
+	user system
+	group system
+	oneshot
+	disabled

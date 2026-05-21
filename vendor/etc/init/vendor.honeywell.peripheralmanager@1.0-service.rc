@@ -1,0 +1,8 @@
+service peripheralmanagerservice /vendor/bin/hw/vendor.honeywell.peripheralmanager@1.0-service
+    class hal
+    user root
+    group root
+
+
+on property:persist.vendor.hon.ioport.com2enable5v=1
+	write /sys/devices/platform/soc/800f000.qcom,spmi/spmi-0/spmi0-04/hon-accessory/com2_power_state 1

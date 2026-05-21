@@ -1,0 +1,19 @@
+on property:ro.hsm.model.num=CT40
+   chown system system  /sys/class/leds/scanner-red/brightness
+   chown system system  /sys/class/leds/scanner-green/brightness
+
+on property:ro.hsm.model.num=CT60
+   chown system system  /sys/class/leds/scanner-red/brightness
+   chown system system  /sys/class/leds/scanner-green/brightness
+
+on property:ro.hsm.model.num=CK65
+   chown system system  /sys/class/leds/scanner-red/brightness
+   chown system system  /sys/class/leds/scanner-green/brightness
+
+on property:ro.hsm.model.num=CN80
+   chown system system  /sys/class/leds/scanner-red/brightness
+   chown system system  /sys/class/leds/scanner-green/brightness
+
+on property:ro.hsm.model.num=CN85
+   chown system system  /sys/class/leds/scanner-red/brightness
+   chown system system  /sys/class/leds/scanner-green/brightness

@@ -1,0 +1,5 @@
+#
+# ct60.prop for dsds
+#
+
+persist.radio.multisim.config=dsds

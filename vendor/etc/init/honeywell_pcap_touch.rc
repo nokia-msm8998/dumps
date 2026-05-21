@@ -1,0 +1,14 @@
+on property:ro.vendor.hon.touch.usb.vendor=ATMEL
+	start mxt-app
+
+on property:vendor.hon.usb.touch.status=updating && property:ro.vendor.hon.touch.usb.vendor=ATMEL
+	exec u:r:mxt_app:s0 root root -- /system/vendor/bin/mxt-app.sh cfg
+
+on property:vendor.hon.usb.touch.exist=* && property:ro.vendor.hon.touch.usb.vendor=ATMEL
+	exec u:r:mxt_app:s0 root root -- /system/vendor/bin/mxt-app.sh t7
+
+service mxt-app /system/vendor/bin/mxt-app.sh initial
+	disabled
+	user root
+	group root
+	oneshot

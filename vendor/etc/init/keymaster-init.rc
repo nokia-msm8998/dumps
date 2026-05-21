@@ -1,0 +1,4 @@
+service keymaster /system/vendor/bin/sh /system/vendor/bin/keymaster.sh
+    class early_hal
+    user root
+    oneshot

@@ -1,0 +1,14 @@
+# hon660-user 13 96.00.05 0092 release-keys
+- manufacturer: honeywell
+- platform: sdm660
+- codename: hon660
+- flavor: hon660-user
+- release: 13
+- id: 96.00.05
+- incremental: 0092
+- tags: release-keys
+- fingerprint: Honeywell/hon660/hon660:13/96.00.05/0092:user/release-keys
+- is_ab: true
+- brand: Honeywell
+- branch: hon660-user-13-96.00.05-0092-release-keys
+- repo: honeywell_hon660_dump

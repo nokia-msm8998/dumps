@@ -1,0 +1,17 @@
+on property:ro.vendor.honeywell.product.model=CT40
+    chown system system /dev/ttyMSM1
+
+on property:ro.vendor.hw.nrf52=true
+    chown system system /sys/class/misc/nrf52/device/power_state
+    chown system system /sys/class/misc/nrf52/device/dfu_state
+    chown system system /sys/class/misc/nrf52/device/ant_state
+    chown system system /sys/class/misc/nrf52/device/uart_en_state
+    chown system system /dev/ttyMSM1
+    start nrf52-hal-1-0
+
+service nrf52-hal-1-0 /vendor/bin/hw/vendor.honeywell.ble.nrf52@1.0-service
+    interface vendor.honeywell.ble.nrf52@1.0::INrf52Ble default
+    class hal
+    user system
+    group system
+    disabled

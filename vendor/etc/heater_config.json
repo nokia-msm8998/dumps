@@ -1,0 +1,22 @@
+{
+    "Enable":1,
+    "EnableMonitoring":1,
+    "Present":1,
+    "DeltaT":0.5,
+    "DurationHeater":300000,
+    "EnableT":-10,
+    "DisableT":20,
+    "SampleTimes":10,
+    "SlowInterval":180000,
+    "FastInterval":2000,
+    "ChillTime":300000,
+    "PreemptiveDelay":1800000,
+    "DurationLcd":20000,
+    "DurationScan":40000,
+    "LowBatteryPercent":25,
+    "PoweronTime":10,
+    "Preemptive":0,
+    "DriverMode":1,
+    "PreemptiveDuty":50,
+    "Blanking":1
+}

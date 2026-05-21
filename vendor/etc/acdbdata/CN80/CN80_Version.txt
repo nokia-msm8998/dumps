@@ -1,0 +1,9 @@
+CN80,2022-12-14
+
+2022-12-14
+- Tune the gain to increase 6dB for HAC receiver path.
+
+2022-11-11
+- Add HAC device 53 and pair device (Tx 41 & Rx 53).
+- Add new ID (253) for VOIP HAC.
+

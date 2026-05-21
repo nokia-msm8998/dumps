@@ -1,0 +1,21 @@
+####################################
+# from generate-common-build-props
+# These properties identify this partition image.
+####################################
+ro.product.system_dlkm.device=hon660
+ro.product.system_dlkm.model=sdm660 for arm64
+ro.product.system_dlkm.name=hon660
+ro.product.system_dlkm.brand=Honeywell
+ro.product.system_dlkm.manufacturer=Honeywell
+ro.system_dlkm.build.date=Wed Sep 24 15:29:10 CST 2025
+ro.system_dlkm.build.date.utc=1758698950
+ro.system_dlkm.build.fingerprint=Honeywell/hon660/hon660:13/96.00.05/0092:user/release-keys
+ro.system_dlkm.build.id=96.00.05
+ro.system_dlkm.build.tags=release-keys
+ro.system_dlkm.build.type=user
+ro.system_dlkm.build.version.incremental=0092
+ro.system_dlkm.build.version.release=13
+ro.system_dlkm.build.version.release_or_codename=13
+ro.system_dlkm.build.version.sdk=33
+# end of file
+

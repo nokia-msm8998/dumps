@@ -1,0 +1,7 @@
+import /vendor/etc/init/hw/init.keymaster_v4.rc
+
+
+on boot
+    write /sys/bus/i2c/devices/6-0060/cc_rd_rp_enable 0
+    write /sys/bus/i2c/devices/6-001d/cc_rd_rp_enable 0
+

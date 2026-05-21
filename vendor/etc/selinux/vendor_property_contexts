@@ -1,0 +1,545 @@
+#line 1 "device/honeywell/sepolicy/common/property_contexts"
+# HSM User Properties
+O                                    u:object_r:hsm_prop:s0
+hsm.                                 u:object_r:hsm_prop:s0
+ro.model                             u:object_r:hsm_prop:s0
+ro.hsm.                              u:object_r:hsm_prop:s0
+ro.hon.                              u:object_r:hsm_prop:s0
+ro.vendor.hon.                       u:object_r:hsm_prop:s0
+ro.hon.logdumpd.enabled              u:object_r:hsm_prop:s0
+
+persist.vendor.hsm.batt.fastcharge u:object_r:exported_system_prop:s0
+
+# Property to enable/disable see more option in volume menu
+persist.sys.settings.volume_menu.disable_see_more_option    u:object_r:exported_system_prop:s0
+
+# Set by init.qcom.early_boot.sh
+ro.honeywell.product.first_api_level     u:object_r:hon_fingerprint_prop:s0
+ro.vendor.honeywell.build.fingerprint    u:object_r:hon_fingerprint_prop:s0
+ro.vendor.honeywell.product.name         u:object_r:hon_fingerprint_prop:s0
+ro.vendor.honeywell.product.device       u:object_r:hon_fingerprint_prop:s0
+ro.vendor.honeywell.product.model        u:object_r:hon_fingerprint_prop:s0
+#for Audio Fluence
+persist.vendor.hsm.fluence.enable u:object_r:bluetooth_audio_hal_prop:s0
+
+persist.vendor.hsm.pow.unattended u:object_r:system_prop:s0
+
+#for SimSelection App
+persist.vendor.hsm.modem.ssr u:object_r:system_prop:s0
+
+persist.camera.ctsverifier     u:object_r:exported_system_prop:s0
+
+persist.sys.displaybase.rotation    u:object_r:system_prop:s0
+persist.sys.displaybase.resolution    u:object_r:system_prop:s0
+persist.sys.displaybase.density    u:object_r:system_prop:s0
+persist.sys.displaybase.mouse_enable    u:object_r:system_prop:s0
+persist.sys.displaybase.hdmi_audio    u:object_r:system_prop:s0
+persist.sys.displaybase.display_mode    u:object_r:system_prop:s0
+
+#DBaseSettings for HDMI mode
+persist.demo.hdmirotation u:object_r:system_prop:s0
+persist.demo.hdmirotates u:object_r:system_prop:s0
+persist.demo.hdmirotationlock u:object_r:system_prop:s0
+persist.demo.remoterotation u:object_r:system_prop:s0
+persist.demo.rotationlock u:object_r:system_prop:s0
+
+#hon_feature
+persist.vendor.feature_inited       u:object_r:hon_feature_prop:s0
+vendor.hon.features                 u:object_r:hon_feature_prop:s0
+
+#healthd autoboot at off-mode charging feature
+ro.offcharger.autoboot              u:object_r:hsm_prop:s0
+
+#Hotswap property
+persist.vendor.hotswap.support			u:object_r:hsm_prop:s0
+persist.batteryhotswap.suspend                  u:object_r:hsm_prop:s0
+
+# system property for panel
+ro.hon.panel.                         u:object_r:hsm_prop:s0
+ro.hon.panel.name                         u:object_r:hsm_prop:s0
+persist.sys.qdcmdisplay                   u:object_r:hsm_prop:s0
+persist.sys.qdcmdisplay_hx8399                   u:object_r:hsm_prop:s0
+
+#system property for touch panel
+ro.vendor.hon.touch.                         u:object_r:hsm_prop:s0
+persist.touch.module.name               u:object_r:hsm_prop:s0
+vendor.hon.usb.                         u:object_r:hsm_prop:s0
+
+# usb touch
+persist.hon.usb.touch.calibrated 	u:object_r:hsm_prop:s0
+vendor.hon.usb.touch.			    u:object_r:hsm_prop:s0
+persist.hon.setting.touchmode 	u:object_r:hsm_prop:s0
+
+#assign initial focus in touch-mode
+persist.sys.always_assign_focus        u:object_r:system_prop:s0
+
+#wifi
+vendor.wlan.                         u:object_r:vendor_wifi_prop:s0
+
+#for MDM BT white list
+persist.hsm.btwl.enable    u:object_r:system_prop:s0
+
+#mdm prop
+persist.mdm.safemode                 u:object_r:system_prop:s0
+
+#for BT mac address
+ro.vendor.bt.boot.macaddr  u:object_r:vendor_bluetooth_prop:s0
+
+# NRF52
+persist.vendor.hon.             u:object_r:hsm_prop:s0
+ro.hon.nrf52.                   u:object_r:hsm_prop:s0
+ro.vendor.hw.                   u:object_r:hsm_prop:s0
+
+#battery led
+persist.led.behaviour.mode     u:object_r:system_prop:s0
+
+#For misc
+persist.sys.capslock.status 	u:object_r:hsm_prop:s0
+
+#keyremap
+persist.camera.csidtg.enable             u:object_r:imager_prop:s0
+persist.camera.customer.config           u:object_r:imager_prop:s0
+persist.vendor.camera.debug.logfile      u:object_r:imager_prop:s0
+vendor.camera.module.name                u:object_r:hsm_prop:s0
+vendor.camera.module.660frontname        u:object_r:hsm_prop:s0
+persist.sys.keyremap.setting      u:object_r:vendor_keyremap_prop:s0
+
+# vendor property for keyremap
+persist.sys.endcallbtn.disable    u:object_r:vendor_keyremap_prop:s0
+
+# For HonWifiSettings
+persist.wlan.                       u:object_r:wifi_prop:s0
+
+#Hxlogger                        u:object_r:vendor_wifi_prop:s0
+persist.sys.hsm.logger_fcount             u:object_r:hxlogger_prop:s0
+persist.sys.hsm.logger                    u:object_r:hxlogger_prop:s0
+persist.sys.scanhandle.gun.detected      u:object_r:exported_system_prop:s0
+persist.sys.ct60xp.sh.crop.image         u:object_r:exported_system_prop:s0
+#Hxlogger Kernel dynamic logs
+persist.vendor.hsm.kerdynalog.requestcmd                 u:object_r:hxlogger_copy_exec_prop:s0
+#tombstone logs
+persist.vendor.hsm.tombstone.filepath                 u:object_r:hxlogger_daemon_copy_exec_prop:s0
+ro.logdumpd.enabled                    u:object_r:logdumpd_prop:s0
+persist.vendor.hsm.logdumpd.filepath                     u:object_r:logdumpd_prop:s0
+persist.vendor.hsm.tcpdumpd.filepath                     u:object_r:tcpdumpd_prop:s0
+persist.vendor.hsm.tcpdumpd.operation                     u:object_r:tcpdumpd_prop:s0
+persist.vendor.hsm.tcpdumpd.interface                     u:object_r:tcpdumpd_prop:s0
+
+#HXLogger Camera plugin
+persist.vendor.camera.dumpimg            u:object_r:hxlogger_camera_dumpimg_exec_prop:s0
+
+#WWAN SAR
+persist.sar.proximity.enable             u:object_r:system_prop:s0
+persist.sar.hotspot.enable_CT40          u:object_r:system_prop:s0
+persist.sar.proximity.enable_CT60XP      u:object_r:system_prop:s0
+persist.vendor.model_CT60XP              u:object_r:hsm_prop:s0
+
+#HXLogger Dumpsys
+persist.vendor.hsm.dumpsys.audio.cmd		u:object_r:hxlogger_dumpsys_prop:s0
+persist.vendor.hsm.dumpsys.wifi.cmd		u:object_r:hxlogger_dumpsys_prop:s0
+persist.vendor.hsm.dumpsys.location.cmd		u:object_r:hxlogger_dumpsys_prop:s0
+persist.vendor.hsm.dumpsys.battery.cmd		u:object_r:hxlogger_dumpsys_prop:s0
+persist.vendor.hsm.dumpsys.wifiscanner.cmd	u:object_r:hxlogger_dumpsys_prop:s0
+persist.vendor.hsm.dumpsys.nfc.cmd		u:object_r:hxlogger_dumpsys_prop:s0
+persist.vendor.hsm.dumpsys.power.cmd		u:object_r:hxlogger_dumpsys_prop:s0
+persist.vendor.hsm.dumpsys.audio.log.filePath		u:object_r:hxlogger_dumpsys_prop:s0
+persist.vendor.hsm.dumpsys.wifi.log.filePath		u:object_r:hxlogger_dumpsys_prop:s0
+persist.vendor.hsm.dumpsys.location.log.filePath	u:object_r:hxlogger_dumpsys_prop:s0
+persist.vendor.hsm.dumpsys.battery.log.filePath		u:object_r:hxlogger_dumpsys_prop:s0
+persist.vendor.hsm.dumpsys.wifiscanner.log.filePath	u:object_r:hxlogger_dumpsys_prop:s0
+persist.vendor.hsm.dumpsys.nfc.log.filePath		u:object_r:hxlogger_dumpsys_prop:s0
+persist.vendor.hsm.dumpsys.power.log.filePath		u:object_r:hxlogger_dumpsys_prop:s0
+
+#For Battery Percentage Mapping
+persist.sys.hsm.upper_limit u:object_r:exported_system_prop:s0
+persist.sys.hsm.lower_limit u:object_r:exported_system_prop:s0
+
+#set persist.data.iwlan.enable
+persist.data.iwlan.enable     u:object_r:radio_prop:s0
+
+#set persist.data_netmgrd_mtu
+persist.data_netmgrd_mtu     u:object_r:radio_prop:s0
+
+# Heater
+persist.sys.heater.enable.hotkey    u:object_r:system_prop:s0
+persist.sys.heater.disable.hotkey    u:object_r:system_prop:s0
+
+persist.sys.heater.operatormode    u:object_r:system_prop:s0
+persist.sys.heater.status    u:object_r:system_prop:s0
+
+persist.sys.hsm.ups30bay                u:object_r:system_prop:s0
+persist.sys.cn85.battery_service        u:object_r:exported_system_prop:s0
+
+#IIO
+ro.vendor.iio.                     u:object_r:iio_prop:s0
+vendor.analog.sensor.output        u:object_r:iio_prop:s0
+
+qemu.hw.mainkeys u:object_r:hsm_prop:s0
+
+#mcud
+persist.hon.mcu.auto_recover       u:object_r:hsm_prop:s0
+
+#powermode
+persist.powermode.support          u:object_r:hsm_prop:s0
+
+#Disable password lock option in choose lock setting
+persist.sys.disable_lock_setting.password_option    u:object_r:exported_system_prop:s0
+
+#Disable active apps notification from Android System
+persist.sys.disable_notification.active_foreground_apps    u:object_r:system_prop:s0
+
+#NTP
+persist.backup.ntpServer    u:object_r:system_prop:s0
+
+#Set persist.sys.batt.ni
+persist.sys.batt.ni u:object_r:system_prop:s0
+
+#EthernetApp
+persist.ethernet.state      u:object_r:system_prop:s0
+persist.ethernet.link.state u:object_r:system_prop:s0
+persist.ethernet.conf_file.state u:object_r:system_prop:s0
+
+persist.sys.hsm.allrotation               u:object_r:system_prop:s0
+persist.sys.hsm.hide_emergency            u:object_r:system_prop:s0
+
+#for EWR-36790, Add QuanYou restrict scan mode
+vendor.hon.quanyou.errorscan  u:object_r:system_prop:s0
+
+#for SCAN key
+persist.sys.dispatch.scankey   u:object_r:system_prop:s0
+
+#Scan handler detect property
+persist.vendor.handlerdetect.support	u:object_r:hsm_prop:s0
+
+persist.vendor.hon.ioport.com2enable5v	u:object_r:system_prop:s0
+
+#for SKIP_CONSENT_SCREENS
+persist.sys.disable.consentscreens   u:object_r:system_prop:s0
+
+# Trigger scan when keyguard locked
+persist.sys.scan_trigger.keyguard_locked    u:object_r:exported_system_prop:s0
+
+#allow lockscreen rotation
+lockscreen.rot_override                  u:object_r:system_prop:s0
+
+#for GPS antenna select
+persist.vendor.gps.select u:object_r:system_prop:s0
+
+#for USB CC PIN
+persist.vendor.hsm.usbccpin          u:object_r:system_prop:s0
+
+#for SPMI debug
+persist.vendor.hsm.pmic.s2_type          u:object_r:system_prop:s0
+
+# For DHCP
+persist.sys.net.                     u:object_r:hsm_dhcp_prop:s0
+dhcp.option.                         u:object_r:hsm_dhcp_prop:s0
+
+# Property to enable/disable notify turn on battery saver
+persist.sys.settings.battery_tip.disable_notify_battery_saver    u:object_r:exported_system_prop:s0
+
+# Property to enable/disable home and recnets button click
+persist.sys.settings.home_recents.disable_button_click           u:object_r:exported_system_prop:s0
+
+persist.wlan.firmware.version                          u:object_r:exported_wifi_prop:s0
+persist.wlan.supplicant.commit                         u:object_r:exported_wifi_prop:s0
+persist.wlan.driver.commit                             u:object_r:exported_wifi_prop:s0
+persist.vendor.qti.nfc.mwver                           u:object_r:nfc_prop:s0
+
+# disable/enable wakeup scan
+persist.vendor.enable.wakeup.scan           u:object_r:hsm_prop:s0
+#Prop to sms domain pref
+persist.sys.smsdomainpref        u:object_r:system_prop:s0
+
+telephony.test.ignore.nitz       u:object_r:system_prop:s0
+
+#Property to override Vibrate on Keypress
+persist.sys.vibrate.keypress    u:object_r:system_prop:s0
+
+# Mix Mode LED
+persist.sys.led.mix_mode     u:object_r:exported_system_prop:s0
+
+#for USB Cert Mode
+persist.vendor.hsm.usbcertmode         u:object_r:system_prop:s0
+
+# Honewyell SPS97825-16725
+persist.vendor.hon.disable_manage_icon           u:object_r:system_prop:s0
+
+#for full performance mode
+persist.vendor.hon.fullperformancemode         u:object_r:system_prop:s0
+
+
+# Honeywell Begin: SPS99068-21828
+
+
+persist.vendor.hon.battery.protection       u:object_r:exported_system_prop:s0
+persist.vendor.hon.battery.chg_limit        u:object_r:exported_system_prop:s0
+
+persist.vendor.hon.disable_errordialog_appinfo                 u:object_r:system_prop:s0
+persist.vendor.hon.disable_taskbar_appinfo                     u:object_r:system_prop:s0
+# Honeywell End
+
+#line 1 "device/qcom/sepolicy/legacy/vendor/common/property_contexts"
+# Copyright (c) 2019, The Linux Foundation. All rights reserved.
+#
+# Redistribution and use in source and binary forms, with or without
+# modification, are permitted provided that the following conditions are
+# met:
+#     * Redistributions of source code must retain the above copyright
+#       notice, this list of conditions and the following disclaimer.
+#     * Redistributions in binary form must reproduce the above
+#       copyright notice, this list of conditions and the following
+#       disclaimer in the documentation and/or other materials provided
+#       with the distribution.
+#     * Neither the name of The Linux Foundation nor the names of its
+#       contributors may be used to endorse or promote products derived
+#       from this software without specific prior written permission.
+#
+# THIS SOFTWARE IS PROVIDED "AS IS" AND ANY EXPRESS OR IMPLIED
+# WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF
+# MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT
+# ARE DISCLAIMED.  IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS
+# BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR
+# CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF
+# SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR
+# BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY,
+# WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE
+# OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
+# IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+
+persist.vendor.service.bdroid.      u:object_r:vendor_bluetooth_prop:s0
+persist.vendor.bt.soc.scram_freqs   u:object_r:vendor_bluetooth_prop:s0
+persist.vendor.bluetooth.a2dp.      u:object_r:vendor_bluetooth_prop:s0
+persist.vendor.qcom.bluetooth.      u:object_r:vendor_bluetooth_prop:s0
+vendor.qcom.bluetooth.              u:object_r:vendor_bluetooth_prop:s0
+vendor.wc_transport.       u:object_r:vendor_bluetooth_prop:s0
+ro.vendor.bluetooth.       u:object_r:vendor_bluetooth_prop:s0
+vendor.ims.                u:object_r:vendor_qcom_ims_prop:s0
+ro.vendor.build.software.version  u:object_r:vendor_qcom_ims_prop:s0
+persist.vendor.ims.        u:object_r:vendor_qcom_ims_prop:s0
+persist.vendor.qti.telephony.vt_cam_interface u:object_r:vendor_qcom_ims_prop:s0
+vendor.hw.fm.                     u:object_r:vendor_fm_prop:s0
+ctl.vendor.qmuxd                  u:object_r:vendor_ctl_vendor_qmuxd_prop:s0
+ctl.vendor.netmgrd                u:object_r:vendor_ctl_vendor_netmgrd_prop:s0
+ctl.vendor.port-bridge            u:object_r:vendor_ctl_vendor_port-bridge_prop:s0
+ctl.vendor.qcrild          u:object_r:vendor_ctl_qcrild_prop:s0
+ctl.vendor.ril-daemon             u:object_r:vendor_ctl_vendor_rild_prop:s0
+ctl.vendor.cnd                    u:object_r:vendor_cnd_vendor_prop:s0
+persist.vendor.sys.cnd            u:object_r:vendor_cnd_vendor_prop:s0
+persist.vendor.cne.               u:object_r:vendor_cnd_vendor_prop:s0
+persist.vendor.cne.feature        u:object_r:vendor_cnd_vendor_prop:s0
+persist.vendor.cne.logging.qxdm   u:object_r:vendor_cnd_vendor_prop:s0
+persist.vendor.cnd.        u:object_r:vendor_cnd_vendor_prop:s0
+persist.vendor.cnd.wqe     u:object_r:vendor_cnd_vendor_prop:s0
+ctl.vendor.vm_bms                 u:object_r:vendor_vm_bms_prop:s0
+vendor.vbms.debug.enable          u:object_r:vendor_vm_bms_debug_prop:s0
+ro.vendor.qualcomm.bluetooth.        u:object_r:vendor_bluetooth_prop:s0
+ctl.vendor.ipacm           u:object_r:vendor_ipacm_prop:s0
+ctl.vendor.ipacm-diag      u:object_r:vendor_ipacm-diag_prop:s0
+ctl.vendor.dataqti         u:object_r:vendor_dataqti_prop:s0
+ctl.vendor.dataadpl         u:object_r:vendor_dataadpl_prop:s0
+ctl.vendor.sensors                u:object_r:vendor_sensors_prop:s0
+init.svc.vendor.qrtrns.enable           u:object_r:vendor_sensors_prop:s0
+ctl.vendor.msm_irqbalance         u:object_r:vendor_msm_irqbalance_prop:s0
+ctl.vendor.msm_irqbl_sdm630       u:object_r:vendor_msm_irqbl_sdm630_prop:s0
+vendor.slpi.               u:object_r:vendor_slpi_prop:s0
+ctl.vendor.msm_irqbal_lb          u:object_r:vendor_msm_irqbalance_prop:s0
+vendor.spcom.              u:object_r:vendor_spcomlib_prop:s0
+vendor.display.               u:object_r:vendor_display_prop:s0
+ro.vendor.display.            u:object_r:vendor_display_prop:s0
+persist.vendor.display.       u:object_r:vendor_display_prop:s0
+ro.vendor.scr_enabled         u:object_r:vendor_scr_enabled_prop:s0
+vendor.bg_reset               u:object_r:vendor_bg_daemon_prop:s0
+vendor.bg.boot_complete       u:object_r:vendor_bg_boot_complete_prop:s0
+vendor.opengles.version       u:object_r:vendor_opengles_prop:s0
+ro.vendor.qualcomm.bt.hci_transport  u:object_r:vendor_bluetooth_prop:s0
+ctl.vendor.mdm_helper      u:object_r:vendor_mdm_helper_prop:s0
+vendor.post_boot.parsed    u:object_r:vendor_mpctl_prop:s0
+vendor.perf.cores_online   u:object_r:vendor_mpctl_prop:s0
+persist.vendor.qti.        u:object_r:vendor_mpctl_prop:s0
+ro.vendor.at_library       u:object_r:vendor_mpctl_prop:s0
+vendor.debug.trace.perf    u:object_r:vendor_mpctl_prop:s0
+vendor.iop.enable_uxe      u:object_r:vendor_iop_prop:s0
+vendor.perf.iop_v3.enable  u:object_r:vendor_iop_prop:s0
+vendor.perf.iop_v3.enable.debug u:object_r:vendor_iop_prop:s0
+vendor.iop.enable_prefetch_ofr   u:object_r:vendor_iop_prop:s0
+vendor.perf.gestureflingboost.enable  u:object_r:vendor_scroll_prop:s0
+vendor.qti.izat.           u:object_r:vendor_location_prop:s0
+vendor.usb.                u:object_r:vendor_usb_prop:s0
+vendor.wlan.driver.version       u:object_r:vendor_wifi_version:s0
+vendor.wlan.firmware.version     u:object_r:vendor_wifi_version:s0
+persist.vendor.usb.        u:object_r:vendor_usb_prop:s0
+ro.vendor.dbg.coresight.cfg_file     u:object_r:vendor_coresight_prop:s0
+vendor.audio.              u:object_r:vendor_audio_prop:s0
+vendor.voice.              u:object_r:vendor_audio_prop:s0
+persist.vendor.audio.      u:object_r:vendor_audio_prop:s0
+ro.vendor.audio.           u:object_r:vendor_audio_prop:s0
+vendor.audio.debug.        u:object_r:vendor_audio_debug_prop:s0
+ro.vendor.alarm_boot       u:object_r:vendor_alarm_boot_prop:s0
+ro.boot.alarmboot          u:object_r:vendor_alarm_boot_prop:s0
+persist.vendor.net.doxlat  u:object_r:vendor_xlat_prop:s0
+persist.vendor.data.dont_use_epc  u:object_r:vendor_dataqdp_prop:s0
+persist.vendor.data.dont_use_npflag  u:object_r:vendor_dataqdp_prop:s0
+persist.vendor.data.profile_update  u:object_r:vendor_dataqdp_prop:s0
+vendor.gralloc.            u:object_r:vendor_gralloc_prop:s0
+vendor.wifi.ftmd.                 u:object_r:vendor_wifi_ftmd_prop:s0
+
+# WIGIG
+vendor.wigig.                                u:object_r:vendor_wigig_prop:s0
+ctl.vendor.wigig_supplicant                  u:object_r:vendor_ctl_vendor_wigigsvc_prop:s0
+ctl.vendor.wigig_hostapd                     u:object_r:vendor_ctl_vendor_wigigsvc_prop:s0
+
+#HWUI Property
+ro.vendor.hwui.texture_cache_size u:object_r:vendor_hwui_prop:s0
+# ActivityManager tuning properties
+ro.vendor.qti.sys.fw.      u:object_r:vendor_am_prop:s0
+
+# vendor_public_vendor_default_prop
+ro.vendor.graphics.memory  u:object_r:vendor_public_vendor_default_prop:s0
+vendor.debug.egl.changepixelformat  u:object_r:vendor_public_vendor_default_prop:s0
+vendor.debug.prerotation.disable  u:object_r:vendor_public_vendor_default_prop:s0
+vendor.dump.gpu.output  u:object_r:vendor_public_vendor_default_prop:s0
+vendor.debug.egl.swapinterval  u:object_r:vendor_public_vendor_default_prop:s0
+vendor.debug.egl.profiler  u:object_r:vendor_public_vendor_default_prop:s0
+vendor.debug.rs.           u:object_r:vendor_public_vendor_default_prop:s0
+
+# cgroup follow
+ro.vendor.qti.cgroup_follow.enable u:object_r:vendor_cgroup_follow_prop:s0
+ro.vendor.qti.cgroup_follow.dex2oat_only u:object_r:vendor_cgroup_follow_prop:s0
+
+#Bservice Property
+ro.vendor.qti.sys.fw.bservice_ u:object_r:vendor_bservice_prop:s0
+#Delayed Service Restart Property
+ro.vendor.qti.am.reschedule_service u:object_r:vendor_reschedule_service_prop:s0
+persist.vendor.graphics.vulkan.disable     u:object_r:vendor_graphics_vulkan_prop:s0
+#boot mode property
+vendor.sys.boot_mode              u:object_r:vendor_boot_mode_prop:s0
+# GPU
+ro.vendor.gpu.available_frequencies u:object_r:vendor_freq_prop:s0
+# NFC
+vendor.qti.nfc.            u:object_r:vendor_nfc_nq_prop:s0
+# LKCore start
+ctl.vendor.LKCore-dbg      u:object_r:vendor_ctl_LKCore_prop:s0
+ctl.vendor.LKCore-rel      u:object_r:vendor_ctl_LKCore_prop:s0
+vendor.rild.libpath        u:object_r:vendor_rild_libpath_prop:s0
+# Peripheral Manager
+vendor.peripheral.         u:object_r:vendor_per_mgr_state_prop:s0
+
+# HBTP
+ctl.vendor.hbtp u:object_r:vendor_ctl_vendor_hbtp_prop:s0
+
+# factory properties
+ctl.vendor.mmid   u:object_r:vendor_ctl_vendor_mmid_prop:s0
+
+# qcc property
+vendor.qti.qdma.                             u:object_r:vendor_qcc_prop:s0
+
+#Needed by qsee need to rename this
+vendor.sys.listeners.registered   u:object_r:vendor_tee_listener_prop:s0
+
+ctl.vendor.imsrcsservice   u:object_r:vendor_ctl_vendor_imsrcsservice_prop:s0
+
+persist.vendor.mmi.        u:object_r:vendor_mmi_prop:s0
+
+#time service
+persist.vendor.delta_time.enable    u:object_r:vendor_time_service_prop:s0
+vendor.debug.time_services.enable   u:object_r:vendor_time_service_prop:s0
+persist.vendor.radio       u:object_r:vendor_radio_prop:s0
+vendor.radio               u:object_r:vendor_radio_prop:s0
+ro.vendor.ril.             u:object_r:vendor_radio_prop:s0
+ro.vendor.radio            u:object_r:vendor_radio_prop:s0
+
+persist.vendor.sys.        u:object_r:vendor_system_prop:s0
+
+#ss-restart
+persist.vendor.ssr.    u:object_r:vendor_ssr_prop:s0
+
+#ss-services (PD)
+persist.vendor.pd_locater_debug    u:object_r:vendor_pd_locater_dbg_prop:s0
+
+#qdcm socket service
+vendor.display.qdcm_socket_service u:object_r:vendor_qdcmss_prop:s0
+
+# Wifi Softap
+persist.vendor.wifi.softap.        u:object_r:vendor_softap_prop:s0
+
+#mm-video
+vendor.media.target.version        u:object_r:vendor_video_prop:s0
+vendor.video.disable.ubwc          u:object_r:vendor_video_prop:s0
+
+#rmt_storage
+ctl.vendor.rmt_storage     u:object_r:vendor_ctl_vendor_rmt_storage_prop:s0
+
+#GPU Available frequencies
+vendor.gpu.available_frequencies u:object_r:vendor_gpu_prop:s0
+
+#netmgrd ko loading
+persist.vendor.data.shs_ko_load u:object_r:vendor_data_ko_prop:s0
+persist.vendor.data.perf_ko_load u:object_r:vendor_data_ko_prop:s0
+persist.vendor.data.offload_ko_load u:object_r:vendor_data_ko_prop:s0
+
+# shsusrd loading
+persist.vendor.data.shsusr_load u:object_r:vendor_data_shsusr_prop:s0
+persist.vendor.data.qmipriod_load u:object_r:vendor_data_qmipriod_prop:s0
+
+#capabilityconfigstore (CCHAL)
+persist.vendor.cap_configstore_debug u:object_r:vendor_cap_configstore_dbg_prop:s0
+
+#hvdcp_opti
+persist.vendor.bms               u:object_r:vendor_hvdcp_opti_prop:s0
+persist.vendor.chg               u:object_r:vendor_hvdcp_opti_prop:s0
+persist.vendor.chg_plcy_mgr      u:object_r:vendor_hvdcp_opti_prop:s0
+persist.vendor.cp                u:object_r:vendor_hvdcp_opti_prop:s0
+persist.vendor.ctm               u:object_r:vendor_hvdcp_opti_prop:s0
+persist.vendor.hvdcp2            u:object_r:vendor_hvdcp_opti_prop:s0
+persist.vendor.hvdcp_opti        u:object_r:vendor_hvdcp_opti_prop:s0
+persist.vendor.hvdcp             u:object_r:vendor_hvdcp_opti_prop:s0
+persist.vendor.pps               u:object_r:vendor_hvdcp_opti_prop:s0
+persist.vendor.std-pd            u:object_r:vendor_hvdcp_opti_prop:s0
+persist.vendor.tb                u:object_r:vendor_hvdcp_opti_prop:s0
+persist.vendor.vin               u:object_r:vendor_hvdcp_opti_prop:s0
+persist.vendor.qg                u:object_r:vendor_hvdcp_opti_prop:s0
+persist.vendor.soh               u:object_r:vendor_hvdcp_opti_prop:s0
+#adsprpc
+vendor.fastrpc.                  u:object_r:vendor_adsprpc_prop:s0
+
+#qvr properties
+vendor.qvr                       u:object_r:vendor_qvr_prop:s0
+
+#bt lazyhal property
+ro.vendor.bt.enablelazyhal       u:object_r:vendor_bluetooth_prop:s0 exact bool
+
+vendor.dcvs.prop                 u:object_r:vendor_dcvs_prop:s0
+#line 1 "device/qcom/sepolicy/legacy/vendor/sdm660/property_contexts"
+# Copyright (c) 2018, The Linux Foundation. All rights reserved.
+#
+# Redistribution and use in source and binary forms, with or without
+# modification, are permitted provided that the following conditions are
+# met:
+#     * Redistributions of source code must retain the above copyright
+#       notice, this list of conditions and the following disclaimer.
+#     * Redistributions in binary form must reproduce the above
+#       copyright notice, this list of conditions and the following
+#       disclaimer in the documentation and/or other materials provided
+#       with the distribution.
+#     * Neither the name of The Linux Foundation nor the names of its
+#       contributors may be used to endorse or promote products derived
+#       from this software without specific prior written permission.
+#
+# THIS SOFTWARE IS PROVIDED "AS IS" AND ANY EXPRESS OR IMPLIED
+# WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF
+# MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT
+# ARE DISCLAIMED.  IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS
+# BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR
+# CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF
+# SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR
+# BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY,
+# WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE
+# OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
+# IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+
+ctl.vendor.cdsprpcd         u:object_r:vendor_cdsprpcd_prop:s0
+#line 1 "system/sepolicy/reqd_mask/property_contexts"
+# empty property_contexts file - this file is used to generate an empty
+# non-platform property context for devices without any property_contexts
+# customizations.

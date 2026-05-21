@@ -1,0 +1,4 @@
+CN85, 2022-1031
+
+- Add HAC device 53 and pair device (Tx 41 & Rx 53).
+- Add new ID (253) for VOIP HAC.

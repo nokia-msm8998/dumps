@@ -1,0 +1,1825 @@
+{
+	"PRODUCT": [
+		{
+			"name": "CT60",
+			"OWN":[{
+				"prop": "ro.hon.plat.sensor.prx",
+				"pval": "true"
+			},
+			{
+				"prop": "ro.hon.plat.sensor.pressure",
+				"pval": "true"
+			},
+			{
+				"prop": "ro.hon.plat.sensor.compass",
+				"pval": "true"
+			}],
+			"BIT": [{
+				"bval": "0",
+				"prop": "none"
+			},
+			{
+				"bval": "1",
+				"prop": "ro.hon.plat.wwan",
+				"dprop":"none",
+				"TYPE": [{
+						"tval": "0",
+						"pval": "false"
+					},
+					{
+						"tval": "1",
+						"pval": "true"
+					}
+				]
+			},
+			{
+				"bval": "2",
+				"prop": "none"
+			},
+			{
+				"bval": "3",
+				"prop": "none"
+			},
+			{
+				"bval": "4",
+				"prop": "ro.hon.plat.memory",
+				"dprop": "ro.hon.plat.keypad",
+				"TYPE": [{
+						"tval": "A",
+						"pval": "3GB/32GB"
+					},
+					{
+						"tval": "B",
+						"pval": "4GB/32GB"
+					}
+				],
+				"DTYPE": [{
+						"tval": "A",
+						"pval": "none"
+					},
+					{
+						"tval": "B",
+						"pval": "none"
+					}
+				]
+			},
+			{
+				"bval": "5",
+				"prop": "ro.hon.plat.imager.sensor",
+				"dprop":"none",
+				"TYPE": [{
+						"tval": "S",
+						"pval": "n660x"
+					},
+					{
+						"tval": "L",
+						"pval": "n660x"
+					},
+					{
+						"tval": "7",
+						"pval": "n670x"
+					},
+					{
+						"tval": "R",
+						"pval": "n670x"
+					},
+					{
+						"tval": "D",
+						"pval": "n670x"
+					},
+					{
+						"tval": "G",
+						"pval": "n670x"
+					},
+					{
+						"tval": "8",
+						"pval": "n680x"
+					},
+					{
+						"tval": "F",
+						"pval": "n680x"
+					},
+					{
+						"tval": "N",
+						"pval": "s0703"
+					},
+					{
+						"tval": "M",
+						"pval": "s0703ve"
+					}
+				]
+			},
+			{
+				"bval": "6",
+				"prop": "ro.hon.plat.camera",
+				"dprop":"none",
+				"TYPE": [{
+						"tval": "C",
+						"pval": "rear"
+					},
+					{
+						"tval": "P",
+						"pval": "rear"
+					},
+					{
+						"tval": "N",
+						"pval": "false"
+					}
+				]
+			},
+			{
+				"bval": "7",
+				"prop": "none"
+			},
+			{
+				"bval": "8",
+				"prop": "ro.hon.plat.application",
+				"dprop":"none",
+				"TYPE": [{
+						"tval": "1",
+						"pval": "No ECP"
+					},
+					{
+						"tval": "2",
+						"pval": "ECP"
+					}
+				]
+			},
+			{
+				"bval": "9",
+				"prop": "ro.hon.plat.deploy",
+				"dprop":"none",
+				"TYPE": [{
+						"tval": "0",
+						"pval": "Standard"
+					},
+					{
+						"tval": "1",
+						"pval": "NI"
+					},
+					{
+						"tval": "2",
+						"pval": "CS"
+					}
+				]
+			},
+			{
+				"bval": "10",
+				"prop": "ro.hon.plat.countrycode",
+				"dprop":"none",
+				"TYPE": [{
+						"tval": "F",
+						"pval": "F"
+					},
+					{
+						"tval": "E",
+						"pval": "E"
+					},
+					{
+						"tval": "A",
+						"pval": "A"
+					},
+					{
+						"tval": "M",
+						"pval": "M"
+					},
+					{
+						"tval": "I",
+						"pval": "I"
+					},
+					{
+						"tval": "N",
+						"pval": "N"
+					},
+					{
+						"tval": "D",
+						"pval": "D"
+					},
+					{
+						"tval": "G",
+						"pval": "G"
+					},
+					{
+						"tval": "T",
+						"pval": "T"
+					}
+				]
+			}]
+		},
+		{
+			"name": "TA60",
+			"OWN":[{
+				"prop": "ro.hon.plat.sensor.prx",
+				"pval": "true"
+			},
+			{
+				"prop": "ro.hon.plat.sensor.pressure",
+				"pval": "false"
+			},
+			{
+				"prop": "ro.hon.plat.sensor.compass",
+				"pval": "true"
+			}],
+			"BIT": [{
+				"bval": "0",
+				"prop": "none"
+			},
+			{
+				"bval": "1",
+				"prop": "ro.hon.plat.wwan",
+				"dprop":"none",
+				"TYPE": [{
+						"tval": "0",
+						"pval": "false"
+					},
+					{
+						"tval": "1",
+						"pval": "true"
+					}
+				]
+			},
+			{
+				"bval": "2",
+				"prop": "none"
+			},
+			{
+				"bval": "3",
+				"prop": "none"
+			},
+			{
+				"bval": "4",
+				"prop": "ro.hon.plat.memory",
+				"dprop": "ro.hon.plat.keypad",
+				"TYPE": [{
+						"tval": "1",
+						"pval": "4GB/32GB"
+					},
+					{
+						"tval": "2",
+						"pval": "6GB/64GB"
+					},
+					{
+						"tval": "3",
+						"pval": "8GB/128GB"
+					}
+				],
+				"DTYPE": [{
+						"tval": "1",
+						"pval": "none"
+					},
+					{
+						"tval": "2",
+						"pval": "none"
+					},
+					{
+						"tval": "3",
+						"pval": "none"
+					}
+				]
+			},
+			{
+				"bval": "5",
+				"prop": "ro.hon.plat.imager.sensor",
+				"dprop":"none",
+				"TYPE": [{
+						"tval": "0",
+						"pval": "none"
+					},
+					{
+						"tval": "7",
+						"pval": "n670x"
+					},
+					{
+						"tval": "8",
+						"pval": "n680x"
+					}
+				]
+			},
+			{
+				"bval": "6",
+				"prop": "ro.hon.plat.camera",
+				"dprop":"none",
+				"TYPE": [{
+						"tval": "C",
+						"pval": "dual"
+					},
+					{
+						"tval": "N",
+						"pval": "false"
+					}
+				]
+			},
+			{
+				"bval": "7",
+				"prop": "none"
+			},
+			{
+				"bval": "8",
+				"prop": "ro.hon.plat.application",
+				"dprop":"none",
+				"TYPE": [{
+						"tval": "1",
+						"pval": "DCP"
+					},
+					{
+						"tval": "2",
+						"pval": "SCP"
+					}
+				]
+			},
+			{
+				"bval": "9",
+				"prop": "none"
+			},
+			{
+				"bval": "10",
+				"prop": "ro.hon.plat.deploy",
+				"dprop":"none",
+				"TYPE": [{
+						"tval": "0",
+						"pval": "Standard"
+					},
+					{
+						"tval": "1",
+						"pval": "Outdoor"
+					}
+				]
+			},
+			{
+				"bval": "11",
+				"prop": "ro.hon.plat.countrycode",
+				"dprop":"none",
+				"TYPE": [{
+						"tval": "F",
+						"pval": "F"
+					},
+					{
+						"tval": "E",
+						"pval": "E"
+					},
+					{
+						"tval": "A",
+						"pval": "A"
+					},
+					{
+						"tval": "M",
+						"pval": "M"
+					},
+					{
+						"tval": "N",
+						"pval": "N"
+					},
+					{
+						"tval": "C",
+						"pval": "C"
+					},
+					{
+						"tval": "I",
+						"pval": "I"
+					}
+				]
+			}]
+		},
+		{
+			"name": "CN80",
+			"OWN":[{
+				"prop": "ro.hon.plat.sensor.prx",
+				"pval": "true"
+			},
+			{
+				"prop": "ro.hon.plat.sensor.pressure",
+				"pval": "true"
+			},
+			{
+				"prop": "ro.hon.plat.sensor.compass",
+				"pval": "true"
+			}],
+			"BIT": [{
+				"bval": "0",
+				"prop": "none"
+			},
+			{
+				"bval": "1",
+				"prop": "ro.hon.plat.wwan",
+				"dprop":"none",
+				"TYPE": [{
+						"tval": "0",
+						"pval": "false"
+					},
+					{
+						"tval": "1",
+						"pval": "true"
+					}
+				]
+			},
+			{
+				"bval": "2",
+				"prop": "none"
+			},
+			{
+				"bval": "3",
+				"prop": "none"
+			},
+			{
+				"bval": "4",
+				"prop": "ro.hon.plat.keypad",
+				"dprop":"ro.hon.plat.memory",
+				"TYPE": [{
+						"tval": "1",
+						"pval": "numeric"
+					},
+					{
+						"tval": "2",
+						"pval": "qwerty"
+					},
+					{
+						"tval": "5",
+						"pval": "numeric"
+					},
+					{
+						"tval": "6",
+						"pval": "qwerty"
+					}
+				],
+				"DTYPE": [{
+						"tval": "1",
+						"pval": "3GB/32GB"
+					},
+					{
+						"tval": "2",
+						"pval": "3GB/32GB"
+					},
+					{
+						"tval": "5",
+						"pval": "4GB/32GB"
+					},
+					{
+						"tval": "6",
+						"pval": "4GB/32GB"
+					}
+				]
+			},
+			{
+				"bval": "5",
+				"prop": "ro.hon.plat.imager.sensor",
+				"dprop":"none",
+				"TYPE": [{
+						"tval": "E",
+						"pval": "n660x"
+					},
+					{
+						"tval": "S",
+						"pval": "n660x"
+					},
+					{
+						"tval": "M",
+						"pval": "ex20"
+					},
+					{
+						"tval": "8",
+						"pval": "n680x"
+					}
+				]
+			},
+			{
+				"bval": "6",
+				"prop": "ro.hon.plat.camera",
+				"dprop":"none",
+				"TYPE": [{
+						"tval": "C",
+						"pval": "rear"
+					},
+					{
+						"tval": "N",
+						"pval": "false"
+					}
+				]
+			},
+			{
+				"bval": "7",
+				"prop": "none"
+			},
+			{
+				"bval": "8",
+				"prop": "ro.hon.plat.application",
+				"dprop":"none",
+				"TYPE": [{
+						"tval": "1",
+						"pval": "No ECP"
+					},
+					{
+						"tval": "2",
+						"pval": "ECP"
+					},
+					{
+						"tval": "3",
+						"pval": "GOV"
+					},
+					{
+						"tval": "4",
+						"pval": "GOV-B"
+					}
+				]
+			},
+			{
+				"bval": "9",
+				"prop": "ro.hon.plat.deploy",
+				"dprop":"none",
+				"TYPE": [{
+						"tval": "0",
+						"pval": "Standard"
+					},
+					{
+						"tval": "1",
+						"pval": "NI"
+					},
+					{
+						"tval": "2",
+						"pval": "CS"
+					}
+				]
+			},
+			{
+				"bval": "10",
+				"prop": "ro.hon.plat.countrycode",
+				"dprop":"none",
+				"TYPE": [{
+						"tval": "F",
+						"pval": "F"
+					},
+					{
+						"tval": "E",
+						"pval": "E"
+					},
+					{
+						"tval": "A",
+						"pval": "A"
+					},
+					{
+						"tval": "M",
+						"pval": "M"
+					},
+					{
+						"tval": "I",
+						"pval": "I"
+					},
+					{
+						"tval": "N",
+						"pval": "N"
+					},
+					{
+						"tval": "D",
+						"pval": "D"
+					},
+					{
+						"tval": "G",
+						"pval": "G"
+					},
+					{
+						"tval": "T",
+						"pval": "T"
+					}
+				]
+			}]
+		},
+		{
+			"name": "CN80G",
+			"OWN": [{
+				"prop": "ro.hon.plat.sensor.prx",
+				"pval": "true"
+			},
+			{
+				"prop": "ro.hon.plat.sensor.pressure",
+				"pval": "true"
+			},
+			{
+				"prop": "ro.hon.plat.sensor.compass",
+				"pval": "true"
+			}],
+			"BIT": [{
+				"bval": "0",
+				"prop": "none"
+			},
+			{
+				"bval": "1",
+				"prop": "ro.hon.plat.wwan",
+				"dprop": "none",
+				"TYPE": [{
+					"tval": "0",
+					"pval": "false"
+				},
+				{
+				"tval": "1",
+				"pval": "true"
+				}]
+			},
+			{
+				"bval": "2",
+				"prop": "none"
+			},
+			{
+				"bval": "3",
+				"prop": "none"
+			},
+			{
+				"bval": "4",
+				"prop": "ro.hon.plat.keypad",
+				"dprop": "ro.hon.plat.memory",
+				"TYPE": [{
+					"tval": "1",
+					"pval": "numeric"
+					},
+					{
+					"tval": "2",
+					"pval": "qwerty"
+					},
+					{
+					"tval": "5",
+					"pval": "numeric"
+					},
+					{
+					"tval": "6",
+					"pval": "qwerty"
+					}
+				],
+				"DTYPE": [{
+					"tval": "1",
+					"pval": "3GB/32GB"
+					},
+					{
+					"tval": "2",
+					"pval": "3GB/32GB"
+					},
+					{
+					"tval": "5",
+					"pval": "4GB/32GB"
+					},
+					{
+					"tval": "6",
+					"pval": "4GB/32GB"
+					}
+					]
+			},
+			{
+				"bval": "5",
+				"prop": "ro.hon.plat.imager",
+				"dprop": "ro.hon.plat.imager.sensor",
+				"TYPE": [{
+					"tval": "E",
+					"pval": "E"
+					},
+					{
+					"tval": "H",
+					"pval": "H"
+					},
+					{
+					"tval": "S",
+					"pval": "S"
+					},
+					{
+					"tval": "M",
+					"pval": "M"
+					},
+					{
+					"tval": "8",
+					"pval": "8"
+					}],
+				"DTYPE": [{
+					"tval": "E",
+					"pval": "n660x"
+					},
+					{
+					"tval": "H",
+					"pval": "n660x"
+					},
+					{
+					"tval": "S",
+					"pval": "n660x"
+					},
+					{
+					"tval": "M",
+					"pval": "ex20"
+					},
+					{
+					"tval": "8",
+					"pval": "n680x"
+					}]
+			},
+			{
+				"bval": "6",
+				"prop": "ro.hon.plat.camera",
+				"dprop": "ro.hon.plat.camera.partnum",
+				"TYPE": [
+					{
+					"tval": "C",
+					"pval": "rear"
+					},
+					{
+					"tval": "N",
+					"pval": "false"
+					}],
+				"DTYPE": [{
+					"tval": "C",
+					"pval": "C"
+					},
+					{
+					"tval": "N",
+					"pval": "N"
+					}]
+			},
+			{
+				"bval": "7",
+				"prop": "none"
+			},
+			{
+				"bval": "8",
+				"prop": "ro.hon.plat.application",
+				"dprop": "none",
+				"TYPE": [
+					{
+					"tval": "1",
+					"pval": "No ECP"
+					},
+					{
+					"tval": "2",
+					"pval": "ECP"
+					},
+					{
+					"tval": "3",
+					"pval": "GOV"
+					},
+					{
+					"tval": "4",
+					"pval": "GOV-B"
+					}
+	                    ]
+		 	},
+			{
+				"bval": "9",
+				"prop": "ro.hon.plat.deploy",
+				"dprop": "none",
+				"TYPE": [
+					{
+					"tval": "0",
+					"pval": "Standard"
+					},
+					{
+					"tval": "1",
+					"pval": "NI"
+					},
+					{
+					"tval": "2",
+					"pval": "CS"
+					}
+				]
+			},
+			{
+				"bval": "10",
+				"prop": "ro.hon.plat.countrycode",
+				"dprop": "none",
+				"TYPE": [
+					{
+					"tval": "F",
+					"pval": "F"
+					},
+					{
+					"tval": "E",
+					"pval": "E"
+					},
+					{
+					"tval": "A",
+					"pval": "A"
+					},
+					{
+					"tval": "M",
+					"pval": "M"
+					},
+					{
+					"tval": "I",
+					"pval": "I"
+					},
+					{
+					"tval": "N",
+					"pval": "N"
+					},
+					{
+					"tval": "D",
+					"pval": "D"
+					},
+					{
+					"tval": "G",
+					"pval": "G"
+					},
+					{
+					"tval": "T",
+					"pval": "T"
+					}
+				]
+			}
+		]
+		},
+		{
+			"name": "CT40",
+			"OWN":[{
+				"prop": "ro.hon.plat.sensor.prx",
+				"pval": "true"
+			},
+			{
+				"prop": "ro.hon.plat.sensor.pressure",
+				"pval": "false"
+			},
+			{
+				"prop": "ro.hon.plat.sensor.compass",
+				"pval": "false"
+			}],
+			"BIT": [{
+				"bval": "0",
+				"prop": "none"
+			},
+			{
+				"bval": "1",
+				"prop": "ro.hon.plat.wwan",
+				"dprop":"none",
+				"TYPE": [{
+						"tval": "0",
+						"pval": "false"
+					},
+					{
+						"tval": "1",
+						"pval": "true"
+					}
+				]
+			},
+			{
+				"bval": "2",
+				"prop": "none"
+			},
+			{
+				"bval": "3",
+				"prop": "none"
+			},
+			{
+				"bval": "4",
+				"prop": "ro.hon.plat.memory",
+				"dprop": "ro.hon.plat.keypad",
+				"TYPE": [{
+						"tval": "1",
+						"pval": "2GB/32GB"
+					},
+					{
+						"tval": "2",
+						"pval": "4GB/32GB"
+					},
+					{
+						"tval": "4",
+						"pval": "6GB/64GB"
+					}
+				],
+				"DTYPE": [{
+						"tval": "1",
+						"pval": "none"
+					},
+					{
+						"tval": "2",
+						"pval": "none"
+					},
+					{
+						"tval": "4",
+						"pval": "none"
+					}
+				]
+			},
+			{
+				"bval": "5",
+				"prop": "ro.hon.plat.imager.sensor",
+				"dprop":"none",
+				"TYPE": [{
+						"tval": "N",
+						"pval": "n360x"
+					},
+					{
+						"tval": "S",
+						"pval": "n660x"
+					},
+					{
+						"tval": "E",
+						"pval": "n660x"
+					},
+					{
+						"tval": "7",
+						"pval": "n670x"
+					},
+					{
+						"tval": "L",
+						"pval": "n670x"
+					},
+					{
+						"tval": "8",
+						"pval": "n680x"
+					},
+					{
+						"tval": "6",
+						"pval": "s0703ve"
+					}
+				]
+			},
+			{
+				"bval": "6",
+				"prop": "ro.hon.plat.camera",
+				"dprop":"none",
+				"TYPE": [{
+						"tval": "C",
+						"pval": "rear"
+					},
+					{
+						"tval": "N",
+						"pval": "false"
+					},
+					{
+						"tval": "R",
+						"pval": "dual"
+					}
+				]
+			},
+			{
+				"bval": "7",
+				"prop": "none"
+			},
+			{
+				"bval": "8",
+				"prop": "ro.hon.plat.application",
+				"dprop":"none",
+				"TYPE": [{
+						"tval": "1",
+						"pval": "No ECP"
+					},
+					{
+						"tval": "2",
+						"pval": "ECP"
+					},
+					{
+						"tval": "3",
+						"pval": "Walmart"
+					},
+					{
+						"tval": "F",
+						"pval": "FedEx G"
+					},
+					{
+						"tval": "E",
+						"pval": "FedEx NG"
+					},
+					{
+						"tval": "4",
+						"pval": "IKEA NG"
+					},
+					{
+						"tval": "5",
+						"pval": "C DATA"
+					},
+					{
+						"tval": "D",
+						"pval": "Cellular Data Only"
+					},
+					{
+						"tval": "R",
+						"pval": "Royal Mail Only"
+					}
+
+				]
+			},
+			{
+				"bval": "9",
+				"prop": "ro.hon.plat.deploy",
+				"dprop":"none",
+				"TYPE": [{
+						"tval": "0",
+						"pval": "Standard"
+					},
+					{
+						"tval": "H",
+						"pval": "Healthcare"
+					},
+					{
+						"tval": "F",
+						"pval": "FedEx"
+					},
+					{
+						"tval": "A",
+						"pval": "Audio Jack"
+					},
+					{
+						"tval": "B",
+						"pval": "No Audio Jack"
+					}
+				]
+			},
+			{
+				"bval": "10",
+				"prop": "ro.hon.plat.countrycode",
+				"dprop":"none",
+				"TYPE": [{
+						"tval": "F",
+						"pval": "F"
+					},
+					{
+						"tval": "E",
+						"pval": "E"
+					},
+					{
+						"tval": "A",
+						"pval": "A"
+					},
+					{
+						"tval": "M",
+						"pval": "M"
+					},
+					{
+						"tval": "I",
+						"pval": "I"
+					},
+					{
+						"tval": "N",
+						"pval": "N"
+					},
+					{
+						"tval": "D",
+						"pval": "D"
+					},
+					{
+						"tval": "C",
+						"pval": "C"
+					},
+					{
+						"tval": "G",
+						"pval": "G"
+					},
+					{
+						"tval": "T",
+						"pval": "T"
+					}
+				]
+			}]
+		},
+		{
+			"name": "CN85",
+			"OWN":[{
+				"prop": "ro.hon.plat.sensor.prx",
+				"pval": "true"
+			},
+			{
+				"prop": "ro.hon.plat.sensor.pressure",
+				"pval": "true"
+			},
+			{
+				"prop": "ro.hon.plat.sensor.compass",
+				"pval": "true"
+			}],
+			"BIT": [{
+				"bval": "0",
+				"prop": "none"
+			},
+			{
+				"bval": "1",
+				"prop": "ro.hon.plat.wwan",
+				"dprop":"none",
+				"TYPE": [{
+						"tval": "0",
+						"pval": "false"
+					},
+					{
+						"tval": "1",
+						"pval": "true"
+					}
+				]
+			},
+			{
+				"bval": "2",
+				"prop": "none"
+			},
+			{
+				"bval": "3",
+				"prop": "none"
+			},
+			{
+				"bval": "4",
+				"prop": "ro.hon.plat.keypad",
+				"dprop": "ro.hon.plat.memory",
+				"TYPE": [{
+						"tval": "1",
+						"pval": "numeric"
+					},
+					{
+						"tval": "2",
+						"pval": "qwerty"
+					},
+					{
+						"tval": "5",
+						"pval": "numeric"
+					},
+					{
+						"tval": "6",
+						"pval": "qwerty"
+					},
+					{
+						"tval": "7",
+						"pval": "ups"
+					},
+					{
+						"tval": "8",
+						"pval": "ups"
+					},
+					{
+						"tval": "9",
+						"pval": "ups"
+					}
+				],
+				"DTYPE": [{
+						"tval": "1",
+						"pval": "3GB/32GB"
+					},
+					{
+						"tval": "2",
+						"pval": "3GB/32GB"
+					},
+					{
+						"tval": "5",
+						"pval": "4GB/32GB"
+					},
+					{
+						"tval": "6",
+						"pval": "4GB/32GB"
+					},
+					{
+						"tval": "7",
+						"pval": "3GB/32GB"
+					},
+					{
+						"tval": "8",
+						"pval": "4GB/32GB"
+					},
+					{
+						"tval": "9",
+						"pval": "3GB/32GB"
+					}
+				]
+			},
+			{
+				"bval": "5",
+				"prop": "ro.hon.plat.imager.sensor",
+				"dprop":"none",
+				"TYPE": [{
+						"tval": "E",
+						"pval": "n660x"
+					},
+					{
+						"tval": "S",
+						"pval": "n670x"
+					},
+					{
+						"tval": "M",
+						"pval": "ex20"
+					},
+					{
+						"tval": "8",
+						"pval": "n680x"
+					}
+				]
+			},
+			{
+				"bval": "6",
+				"prop": "ro.hon.plat.camera",
+				"dprop":"none",
+				"TYPE": [{
+						"tval": "C",
+						"pval": "rear"
+					},
+					{
+						"tval": "N",
+						"pval": "false"
+					}
+				]
+			},
+			{
+				"bval": "7",
+				"prop": "none"
+			},
+			{
+				"bval": "8",
+				"prop": "ro.hon.plat.application",
+				"dprop":"none",
+				"TYPE": [{
+						"tval": "1",
+						"pval": "No ECP"
+					},
+					{
+						"tval": "2",
+						"pval": "ECP"
+					}
+				]
+			},
+			{
+				"bval": "9",
+				"prop": "ro.hon.plat.deploy",
+				"dprop":"none",
+				"TYPE": [{
+						"tval": "0",
+						"pval": "Standard"
+					},
+					{
+						"tval": "1",
+						"pval": "NI"
+					}
+				]
+			},
+			{
+				"bval": "10",
+				"prop": "ro.hon.plat.countrycode",
+				"dprop":"none",
+				"TYPE": [{
+						"tval": "F",
+						"pval": "F"
+					},
+					{
+						"tval": "E",
+						"pval": "E"
+					},
+					{
+						"tval": "A",
+						"pval": "A"
+					},
+					{
+						"tval": "M",
+						"pval": "M"
+					},
+					{
+						"tval": "I",
+						"pval": "I"
+					},
+					{
+						"tval": "N",
+						"pval": "N"
+					},
+					{
+						"tval": "D",
+						"pval": "D"
+					},
+					{
+						"tval": "C",
+						"pval": "C"
+					},
+					{
+						"tval": "G",
+						"pval": "G"
+					},
+					{
+						"tval": "T",
+						"pval": "T"
+					}
+				]
+			}]
+		},
+		{
+			"name": "VM1A",
+			"OWN":[{
+				"prop": "ro.hon.plat.camera",
+				"pval": "false"
+			},
+			{
+				"prop": "ro.hon.plat.sensor.prx",
+				"pval": "false"
+			},
+			{
+				"prop": "ro.hon.plat.sensor.pressure",
+				"pval": "false"
+			},
+			{
+				"prop": "ro.hon.plat.sensor.compass",
+				"pval": "true"
+			}],
+			"BIT": [{
+				"bval": "0",
+				"prop": "none"
+			},
+			{
+				"bval": "1",
+				"prop": "ro.hon.plat.wwan",
+				"dprop":"none",
+				"TYPE": [{
+						"tval": "0",
+						"pval": "false"
+					},
+					{
+						"tval": "1",
+						"pval": "true"
+					}
+				]
+			},
+			{
+				"bval": "2",
+				"prop": "none"
+			},
+			{
+				"bval": "3",
+				"prop": "none"
+			},
+			{
+				"bval": "4",
+				"prop": "ro.hon.plat.keypad",
+				"dprop":"none",
+				"TYPE": [{
+						"tval": "1",
+						"pval": "vm1a"
+					}
+				]
+			},
+			{
+				"bval": "5",
+				"prop": "ro.hon.plat.memory",
+				"dprop":"none",
+				"TYPE": [{
+						"tval": "A",
+						"pval": "4GB/32GB"
+					}
+				]
+			},
+			{
+				"bval": "6",
+				"prop": "ro.hon.plat.deploy",
+				"dprop":"none",
+				"TYPE": [{
+						"tval": "1",
+						"pval": "none"
+					},
+					{
+						"tval": "2",
+						"pval": "defroster"
+					},
+					{
+						"tval": "3",
+						"pval": "none"
+					},
+					{
+						"tval": "4",
+						"pval": "none"
+					},
+					{
+						"tval": "5",
+						"pval": "defroster"
+					},
+					{
+						"tval": "6",
+						"pval": "none"
+					}
+				]
+			},
+			{
+				"bval": "7",
+				"prop": "none"
+			},
+			{
+				"bval": "8",
+				"prop": "ro.hon.plat.application",
+				"dprop":"none",
+				"TYPE": [{
+						"tval": "1",
+						"pval": "No ECP"
+					},
+					{
+						"tval": "2",
+						"pval": "ECP"
+					}
+				]
+			},
+			{
+				"bval": "9",
+				"prop": "none"
+			},
+			{
+				"bval": "10",
+				"prop": "ro.hon.plat.countrycode",
+				"dprop":"none",
+				"TYPE": [{
+						"tval": "F",
+						"pval": "F"
+					},
+					{
+						"tval": "E",
+						"pval": "E"
+					},
+					{
+						"tval": "A",
+						"pval": "A"
+					},
+					{
+						"tval": "M",
+						"pval": "M"
+					},
+					{
+						"tval": "I",
+						"pval": "I"
+					},
+					{
+						"tval": "N",
+						"pval": "N"
+					},
+					{
+						"tval": "D",
+						"pval": "D"
+					},
+					{
+						"tval": "G",
+						"pval": "G"
+					}
+				]
+			}]
+		},
+		{
+			"name": "CK65",
+			"OWN":[{
+				"prop": "ro.hon.plat.sensor.prx",
+				"pval": "true"
+			},
+			{
+				"prop": "ro.hon.plat.sensor.pressure",
+				"pval": "false"
+			},
+			{
+				"prop": "ro.hon.plat.sensor.compass",
+				"pval": "true"
+			}],
+			"BIT": [{
+				"bval": "0",
+				"prop": "none"
+			},
+			{
+				"bval": "1",
+				"prop": "ro.hon.plat.wwan",
+				"dprop":"none",
+				"TYPE": [{
+						"tval": "0",
+						"pval": "false"
+					},
+					{
+						"tval": "1",
+						"pval": "true"
+					}
+				]
+			},
+			{
+				"bval": "2",
+				"prop": "none"
+			},
+			{
+				"bval": "3",
+				"prop": "none"
+			},
+			{
+				"bval": "4",
+				"prop": "ro.hon.plat.keypad",
+				"dprop":"ro.hon.plat.memory",
+				"TYPE": [{
+						"tval": "A",
+						"pval": "qwerty"
+					},
+					{
+						"tval": "B",
+						"pval": "qwerty"
+					},
+					{
+						"tval": "C",
+						"pval": "numeric"
+					},
+					{
+						"tval": "D",
+						"pval": "numeric"
+					},
+					{
+						"tval": "E",
+						"pval": "numericonly"
+					},
+					{
+						"tval": "F",
+						"pval": "53key"
+					},
+					{
+						"tval": "G",
+						"pval": "42key"
+					}
+				],
+				"DTYPE": [{
+						"tval": "A",
+						"pval": "2GB/32GB"
+					},
+					{
+						"tval": "B",
+						"pval": "4GB/32GB"
+					},
+					{
+						"tval": "C",
+						"pval": "2GB/32GB"
+					},
+					{
+						"tval": "D",
+						"pval": "4GB/32GB"
+					},
+					{
+						"tval": "E",
+						"pval": "4GB/32GB"
+					},
+					{
+						"tval": "F",
+						"pval": "4GB/32GB"
+					},
+					{
+						"tval": "G",
+						"pval": "4GB/32GB"
+					}
+				]
+			},
+			{
+				"bval": "5",
+				"prop": "ro.hon.plat.imager.sensor",
+				"dprop":"none",
+				"TYPE": [{
+						"tval": "7",
+						"pval": "n670x"
+					},
+					{
+						"tval": "S",
+						"pval": "n670x"
+					},
+					{
+						"tval": "M",
+						"pval": "ex20"
+					},
+					{
+						"tval": "8",
+						"pval": "n680x"
+					},
+					{
+						"tval": "H",
+						"pval": "n670x"
+					},
+					{
+						"tval": "L",
+						"pval": "n680xdf"
+					}
+				]
+			},
+			{
+				"bval": "6",
+				"prop": "ro.hon.plat.camera",
+				"dprop":"none",
+				"TYPE": [{
+						"tval": "C",
+						"pval": "rear"
+					},
+					{
+						"tval": "N",
+						"pval": "false"
+					},
+					{
+						"tval": "A",
+						"pval": "rear"
+					},
+					{
+						"tval": "B",
+						"pval": "false"
+					}
+				]
+			},
+			{
+				"bval": "7",
+				"prop": "none"
+			},
+			{
+				"bval": "8",
+				"prop": "ro.hon.plat.application",
+				"dprop":"none",
+				"TYPE": [{
+						"tval": "1",
+						"pval": "No ECP"
+					},
+					{
+						"tval": "2",
+						"pval": "ECP"
+					},
+					{
+						"tval": "3",
+						"pval": "GOV"
+					},
+					{
+						"tval": "4",
+						"pval": "GOV-B"
+					}
+				]
+			},
+			{
+				"bval": "9",
+				"prop": "ro.hon.plat.deploy",
+				"dprop":"none",
+				"TYPE": [{
+						"tval": "0",
+						"pval": "Standard"
+					},
+					{
+						"tval": "1",
+						"pval": "NI"
+					},
+					{
+						"tval": "2",
+						"pval": "CS"
+					},
+					{
+						"tval": "3",
+						"pval": "ATEX"
+					},
+					{
+						"tval": "4",
+						"pval": "Standard"
+					}
+				]
+			},
+			{
+				"bval": "10",
+				"prop": "ro.hon.plat.countrycode",
+				"dprop":"none",
+				"TYPE": [{
+						"tval": "F",
+						"pval": "F"
+					},
+					{
+						"tval": "E",
+						"pval": "E"
+					},
+					{
+						"tval": "A",
+						"pval": "A"
+					},
+					{
+						"tval": "M",
+						"pval": "M"
+					},
+					{
+						"tval": "I",
+						"pval": "I"
+					},
+					{
+						"tval": "N",
+						"pval": "N"
+					},
+					{
+						"tval": "D",
+						"pval": "D"
+					},
+					{
+						"tval": "C",
+						"pval": "C"
+					},
+					{
+						"tval": "G",
+						"pval": "G"
+					}
+				]
+			}]
+		},
+		{
+			"name": "VM3A",
+			"OWN": [{
+				"prop": "ro.hon.plat.camera",
+				"pval": "false"
+			},
+			{
+				"prop": "ro.hon.plat.sensor.prx",
+				"pval": "false"
+			},
+			{
+				"prop": "ro.hon.plat.sensor.pressure",
+				"pval": "false"
+			},
+			{
+				"prop": "ro.hon.plat.sensor.compass",
+				"pval": "true"
+			}],
+			"BIT": [{
+				"bval": "0",
+				"prop": "none"
+			},
+			{
+				"bval": "1",
+				"prop": "ro.hon.plat.wwan",
+				"dprop": "none",
+				"TYPE": [{
+						"tval": "0",
+						"pval": "false"
+					},
+					{
+						"tval": "1",
+						"pval": "true"
+					}
+				]
+			},
+			{
+				"bval": "2",
+				"prop": "none"
+			},
+			{
+				"bval": "3",
+				"prop": "none"
+			},
+			{
+				"bval": "4",
+				"prop": "ro.hon.plat.memory",
+				"dprop": "ro.hon.plat.keypad",
+				"TYPE": [{
+						"tval": "1",
+						"pval": "4GB/32GB"
+					}
+				],
+				"DTYPE": [{
+						"tval": "1",
+						"pval": "vm3a"
+					}
+				]
+			},
+			{
+				"bval": "5",
+				"prop": "none"
+			},
+			{
+				"bval": "6",
+				"prop": "ro.hon.plat.deploy",
+				"dprop": "none",
+				"TYPE": [{
+						"tval": "1",
+						"pval": "none"
+					},
+					{
+						"tval": "2",
+						"pval": "defroster"
+					},
+					{
+						"tval": "3",
+						"pval": "none"
+					},
+					{
+						"tval": "4",
+						"pval": "none"
+					},
+					{
+						"tval": "6",
+						"pval": "none"
+					}
+				]
+			},
+			{
+				"bval": "7",
+				"prop": "none"
+			},
+			{
+				"bval": "8",
+				"prop": "ro.hon.plat.application",
+				"dprop": "none",
+				"TYPE": [{
+						"tval": "2",
+						"pval": "DCP"
+					}
+				]
+			},
+			{
+				"bval": "9",
+				"prop": "none"
+			},
+			{
+				"bval": "10",
+				"prop": "ro.hon.plat.countrycode",
+				"dprop": "none",
+				"TYPE": [{
+						"tval": "F",
+						"pval": "F"
+					},
+					{
+						"tval": "E",
+						"pval": "E"
+					},
+					{
+						"tval": "A",
+						"pval": "A"
+					},
+					{
+						"tval": "M",
+						"pval": "M"
+					},
+					{
+						"tval": "N",
+						"pval": "N"
+					},
+					{
+						"tval": "C",
+						"pval": "E"
+					}
+				]
+			}]
+		}]
+}

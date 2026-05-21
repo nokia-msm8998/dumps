@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ModemModeConfig>
+
+ <mode name="ROW">
+  <config_name name="ROW_Commercial"/>
+  <path name="data/vendor/modem_config/mcfg_sw/generic/common/row/commerci/mcfg_sw.mbn"/>
+ </mode>
+
+ <mode name="Verizon">
+  <config_name name="hVoLTE-Verizon"/>
+  <path name="data/vendor/modem_config/mcfg_sw/generic/na/verizon/hvolte/mcfg_sw.mbn"/>
+ </mode>
+
+ <mode name="ATT">
+  <config_name name="VoLTE-ATT"/>
+  <path name="data/vendor/modem_config/mcfg_sw/generic/na/att/volte/mcfg_sw.mbn"/>
+ </mode>
+
+ <mode name="Sprint">
+  <config_name name="Commercial-Sprint"/>
+  <path name="data/vendor/modem_config/mcfg_sw/generic/na/sprint/commerci/mcfg_sw.mbn"/>
+ </mode>
+
+ <mode name="Brazil">
+  <config_name name="Brazil_Commercial"/>
+  <path name="data/vendor/modem_config/mcfg_sw/generic/sa/brazil/commerci/mcfg_sw.mbn"/>
+ </mode>
+
+ <mode name="Vodafone-UK">
+  <config_name name="UK-VoLTE-Vodafone"/>
+  <path name="data/vendor/modem_config/mcfg_sw/generic/eu/vodafone/volte/uk/mcfg_sw.mbn"/>
+ </mode>
+
+ <mode name="Optus">
+  <config_name name="Optus_Australia_Commercial"/>
+  <path name="data/vendor/modem_config/mcfg_sw/generic/aunz/optus/commerci/au/mcfg_sw.mbn"/>
+ </mode>
+
+ <mode name="Telstra">
+  <config_name name="Telstra_Australia_Commercial"/>
+  <path name="data/vendor/modem_config/mcfg_sw/generic/aunz/telstra/commerci/mcfg_sw.mbn"/>
+ </mode>
+
+ <mode name="KT">
+  <config_name name="Commercial-KT"/>
+  <path name="data/vendor/modem_config/mcfg_sw/generic/korea/kt/commerci/mcfg_sw.mbn"/>
+ </mode>
+
+ <mode name="SKT">
+  <config_name name="Commercial-SKT"/>
+  <path name="data/vendor/modem_config/mcfg_sw/generic/korea/skt/commerci/mcfg_sw.mbn"/>
+ </mode>
+
+ <mode name="LGU+">
+  <config_name name="Commercial-LGU"/>
+  <path name="data/vendor/modem_config/mcfg_sw/generic/korea/lgu/commerci/mcfg_sw.mbn"/>
+ </mode>
+
+ <mode name="Spark">
+  <config_name name="Spark_Commercial"/>
+  <path name="data/vendor/modem_config/mcfg_sw/generic/aunz/spark/commerci/mcfg_sw.mbn"/>
+ </mode>
+
+ <mode name="VDF-Germany">
+  <config_name name="Germany-VoLTE-Vodafone"/>
+  <path name="data/vendor/modem_config/mcfg_sw/generic/eu/vodafone/volte/germany/mcfg_sw.mbn"/>
+ </mode>
+
+ <mode name="TEF-Germany">
+  <config_name name="TEF_Germany_Commercial"/>
+  <path name="data/vendor/modem_config/mcfg_sw/generic/eu/telefoni/commerci/de/mcfg_sw.mbn"/>
+ </mode>
+
+ <mode name="Bouygues-France">
+  <config_name name="Bouygues_France_Commercial"/>
+  <path name="data/vendor/modem_config/mcfg_sw/generic/eu/bouygues/commerci/france/mcfg_sw.mbn"/>
+ </mode>
+
+ <mode name="Orange-France">
+  <config_name name="France-Commercial-Orange"/>
+  <path name="data/vendor/modem_config/mcfg_sw/generic/eu/orange/commerci/france/mcfg_sw.mbn"/>
+ </mode>
+
+ <mode name="ChinaMobile">
+  <config_name name="Volte_OpenMkt-Commercial-CMCC"/>
+  <path name="data/vendor/modem_config/mcfg_sw/generic/china/cmcc/commerci/volte_op/mcfg_sw.mbn"/>
+ </mode>
+
+ <mode name="ChinaUnicom">
+  <config_name name="VoLTE-CU"/>
+  <path name="data/vendor/modem_config/mcfg_sw/generic/china/cu/commerci/volte/mcfg_sw.mbn"/>
+ </mode>
+
+ <mode name="ChinaTelecom">
+  <config_name name="hVoLTE_OPNMKT_CT"/>
+  <path name="data/vendor/modem_config/mcfg_sw/generic/china/ct/commerci/hvolte_o/mcfg_sw.mbn"/>
+ </mode>
+
+ <mode name="TMO">
+  <config_name name="Commercial-TMO"/>
+  <path name="data/vendor/modem_config/mcfg_sw/generic/na/tmo/commerci/mcfg_sw.mbn"/>
+ </mode>
+
+ <mode name="Sprint-Curiosity">
+  <config_name name="Sprint-Curiosity"/>
+  <path name="data/vendor/modem_config/mcfg_sw/generic/na/sprint/sprintcu/mcfg_sw.mbn"/>
+ </mode>
+
+  <mode name="ATT-Cricket">
+  <config_name name="ATT-Cricket"/>
+  <path name="data/vendor/modem_config/mcfg_sw/generic/na/att/cricket/mcfg_sw.mbn"/>
+ </mode>
+
+  <mode name="EE">
+  <config_name name="Commercial-EE"/>
+  <path name="data/misc/radio/modem_config/mcfg_sw/generic/eu/ee/commerci/mcfg_sw.mbn"/>
+ </mode>
+
+  <mode name="Singtel">
+  <config_name name="Singtel_Commercial"/>
+  <path name="data/misc/radio/modem_config/mcfg_sw/generic/sea/singtel/commerci/singapor/mcfg_sw.mbn"/>
+ </mode>
+
+ <mode name="Rogers">
+  <config_name name="Rogers"/>
+  <path name="data/vendor/modem_config/mcfg_sw/generic/na/rogers/commerci/ca/mcfg_sw.mbn"/>
+ </mode>
+
+ <mode name="Default">
+  <config_name name="Default"/>
+  <path name="data/vendor/modem_config/mcfg_sw/generic/common/row/row_defa/mcfg_sw.mbn"/>
+ </mode>
+
+ <mode name="ChunghwaTel">
+  <config_name name="ChunghwaTel_Taiwan_Commercial"/>
+  <path name="data/vendor/modem_config/mcfg_sw/generic/sea/chunghwa/commerci/tw/mcfg_sw.mbn"/>
+ </mode>
+
+ <mode name="TaiwanMobile">
+  <config_name name="TaiwanMobile_Commercial"/>
+  <path name="data/vendor/modem_config/mcfg_sw/generic/sea/tm/commerci/mcfg_sw.mbn"/>
+ </mode>
+
+ <mode name="TStar">
+  <config_name name="TStar_Taiwan_Commercial"/>
+  <path name="data/vendor/modem_config/mcfg_sw/generic/sea/tstar/commerci/tw/mcfg_sw.mbn"/>
+ </mode>
+
+ <mode name="Telus_Canada">
+  <config_name name="Telus_Canada"/>
+  <path name="data/vendor/modem_config/mcfg_sw/generic/na/telus/commerci/ca/mcfg_sw.mbn"/>
+ </mode>
+
+</ModemModeConfig>

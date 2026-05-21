@@ -1,0 +1,8 @@
+on property:ro.vendor.honeywell.product.model=*
+	start honeywell_misc_service
+
+service honeywell_misc_service /vendor/bin/hw/vendor.honeywell.misc@1.0-service
+    class hal
+    user root
+    group root system
+    disabled

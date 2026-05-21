@@ -1,0 +1,10 @@
+#on property:ro.vendor.hw.nrf52=true && property:sys.boot_completed=1
+on property:ro.vendor.hw.nrf52=true
+	start nrf52-fw-upg
+
+service nrf52-fw-upg /system/vendor/bin/nrf52-fw-upg.sh
+	seclabel u:r:nrf52_fw_upg:s0
+	user system
+	group system shell
+	oneshot
+	disabled

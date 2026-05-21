@@ -1,0 +1,15 @@
+#
+# Actions and services for enabling factoryt test
+#
+
+on property:persist.sys.factorytest=2
+    setprop ro.factorytest 2
+    start selinux_off
+    chmod 0777 /dev/nq-nci
+
+service selinux_off /system/xbin/su root /vendor/bin/setenforce 0
+    user root
+    disabled
+    oneshot
+    seclabel u:r:su:s0
+

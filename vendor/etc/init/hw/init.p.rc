@@ -1,0 +1,227 @@
+#
+# Actions and services for the hon660 platform
+#
+
+# Import the non-open stuff if it's present
+import /init.honeywell-vendor-hon660.rc
+import /vendor/etc/init/hw/init.keymaster_v4.rc
+
+on boot
+    chown system system /dev/hon_battery_authentication
+    chown system system /dev/Honeywell_keyremap
+    chown system system /dev/uid_whitelist
+    chown system system /dev/hall_sensor_status
+    chmod 0664 /dev/hon_battery_authentication
+    chmod 0664 /dev/hall_sensor_status
+    chmod 0660 /dev/uid_whitelist
+    setprop persist.sys.disable_rescue true
+    setprop qemu.hw.mainkeys 0
+
+on fs
+    wait /dev/block/platform/soc/${ro.boot.bootdevice}
+    symlink /dev/block/platform/soc/${ro.boot.bootdevice} /dev/block/bootdevice
+    mount_all /vendor/etc/fstab.hon.aosp
+    swapon_all /vendor/etc/fstab.hon.aosp
+    chown root system /mnt/vendor/persist
+    chmod 0771 /mnt/vendor/persist
+    mkdir /mnt/vendor/persist/data 0700 system system
+    mkdir /mnt/vendor/persist/bms 0700 root system
+    restorecon_recursive /mnt/vendor/persist
+    write /sys/kernel/boot_adsp/boot 1
+    start set_modem_configs_from_hlos
+
+    #change permission for EEPROM
+    chown root system /sys/bus/i2c/devices/3-0052/eeprom
+    chmod 0660 /sys/bus/i2c/devices/3-0052/eeprom
+
+    wait /dev/block/bootdevice/by-name/license
+    mount ext4 /dev/block/bootdevice/by-name/license /license noatime nosuid nodev barrier=1
+    restorecon_recursive /license
+
+    ## Backlight
+    chown system system /sys/class/leds/button-backlight/brightness
+
+	### /sys/class/leds specific config ##
+    chmod 0664 /sys/class/leds/red/brightness
+    chmod 0664 /sys/class/leds/green/brightness
+    chmod 0664 /sys/class/leds/blue/brightness
+
+    chown system system /sys/class/leds/red/brightness
+    chown system system /sys/class/leds/green/brightness
+    chown system system /sys/class/leds/blue/brightness
+
+    chown system system /sys/class/leds/red/blink
+    chown system system /sys/class/leds/green/blink
+    chown system system /sys/class/leds/blue/blink
+
+    chown system system /sys/class/leds/red/customize_blink
+    chown system system /sys/class/leds/green/customize_blink
+    chown system system /sys/class/leds/blue/customize_blink
+    chown system system /sys/class/leds/red/duty_pcts
+    chown system system /sys/class/leds/red/ramp_step_ms
+    chown system system /sys/class/leds/green/duty_pcts
+    chown system system /sys/class/leds/green/ramp_step_ms
+    chown system system /sys/class/leds/blue/duty_pcts
+    chown system system /sys/class/leds/blue/ramp_step_ms
+    chown system system /sys/class/leds/green/suspend_off
+
+on post-fs-data
+    # QMMI Results: This way user can read it from Host PC using MTP
+    mkdir /persist/media/FTM_AP 0775 media_rw media_rw
+
+    # license
+    # For system_app
+    #chown system system /license
+    # For platform_app
+    chown media_rw media_rw /license
+    chmod 0771 /license
+
+    #BatteryOptimizer
+    chown system system /sys/class/power_supply/battery/temp
+    chmod 664 /sys/class/power_supply/battery/temp
+
+    #BatteryAuth
+    chown system system /sys/class/power_supply/battery/input_suspend
+    chmod 664 /sys/class/power_supply/battery/input_suspend
+
+service mfg-mac-apply /system/vendor/bin/sh /system/vendor/bin/mfg-mac-apply.sh
+    class late_start
+    user root
+    oneshot
+
+#Enable Modem SSR
+service enable_modem_ssr /vendor/bin/init.dubai.modem.ssr.sh
+    disabled
+    user root
+    oneshot
+
+#Set WWAN compliance version
+service set_wwan_version /vendor/bin/init.dubai.wwan.numbering.sh
+    disabled
+    user root
+    oneshot
+
+on property:persist.vendor.hsm.modem.ssr=true
+   start enable_modem_ssr
+
+service set_modem_configs_from_hlos /vendor/bin/init.dubai.modem.configs_from_hlos.sh
+    class main
+    user root
+    group root shell vendor_rfs_shared
+    oneshot
+    disabled
+
+on property:ro.hsm.model.num=CN80
+   setprop persist.powermode.support false
+   setprop persist.vendor.hotswap.support true
+   chmod 0664 /sys/bus/i2c/devices/4-004a/cfg_mode
+   chown system system /sys/bus/i2c/devices/4-004a/cfg_mode
+   write /sys/module/libcomposite/parameters/enable_self_power Y
+   write /sys/module/libcomposite/parameters/disable_l1_for_hs N
+   write /sys/module/dwc3/parameters/enable_dwc3_u1u2 Y
+   setprop persist.sar.proximity.enable true
+   chmod 0664 /sys/devices/soc/a800000.ssusb/power/control
+   chown system system /sys/devices/soc/a800000.ssusb/power/control
+   chmod 0664 /sys/devices/soc/a800000.ssusb/mode
+   chown system system /sys/devices/soc/a800000.ssusb/mode
+
+on property:ro.hsm.model.num=CT60
+   setprop persist.powermode.support false
+   setprop persist.vendor.hotswap.support false
+   setprop qemu.hw.mainkeys 1
+   chmod 0664 /sys/bus/i2c/devices/4-004a/cfg_mode
+   chown system system /sys/bus/i2c/devices/4-004a/cfg_mode
+   setprop persist.sar.proximity.enable false
+   setprop persist.sar.proximity.enable_CT60XP false
+   chmod 0664 /sys/class/leds/lcd-backlight_1/brightness
+   chown system system /sys/class/leds/lcd-backlight_1/brightness
+
+on property:persist.vendor.model_CT60XP=true
+    setprop persist.sar.proximity.enable_CT60XP true
+
+
+on property:ro.hsm.model.num=CK65
+   setprop persist.powermode.support false
+   setprop persist.vendor.hotswap.support true
+   chmod 0664 /sys/bus/i2c/devices/4-004a/cfg_mode
+   chown system system /sys/bus/i2c/devices/4-004a/cfg_mode
+   setprop persist.sar.proximity.enable false
+
+on property:ro.hsm.model.num=CN85
+   setprop persist.powermode.support false
+   setprop persist.vendor.hotswap.support true
+   setprop persist.batteryhotswap.suspend true
+   chmod 0664 /sys/bus/i2c/devices/4-004a/cfg_mode
+   chown system system /sys/bus/i2c/devices/4-004a/cfg_mode
+   write /sys/module/libcomposite/parameters/enable_self_power Y
+   write /sys/module/libcomposite/parameters/disable_l1_for_hs N
+   write /sys/module/dwc3/parameters/enable_dwc3_u1u2 Y
+   setprop persist.sar.proximity.enable true
+   chmod 0664 /sys/devices/soc/a800000.ssusb/power/control
+   chown system system /sys/devices/soc/a800000.ssusb/power/control
+   chmod 0664 /sys/devices/soc/a800000.ssusb/mode
+   chown system system /sys/devices/soc/a800000.ssusb/mode
+
+on property:ro.hsm.model.num=CT40
+   setprop persist.sar.hotspot.enable_CT40 true
+
+on property:ro.hsm.model.num=TA60
+   setprop persist.sar.hotspot.enable_TA60 true
+
+on property:ro.hsm.model.num=VM1A
+    chown system system /sys/devices/platform/soc/soc:honeywell,mcu_sensor@0/flush
+    chmod 0664 /sys/devices/platform/soc/soc:honeywell,mcu_sensor@0/flush
+    chown system system /sys/devices/platform/soc/soc:honeywell,mcu_sensor@0/enable
+    chmod 0664 /sys/devices/platform/soc/soc:honeywell,mcu_sensor@0/enable
+
+on property:ro.vendor.honeywell.product.model=VM3A
+    chown system system /sys/devices/platform/soc/soc:honeywell,mcu_sensor@0/flush
+    chmod 0664 /sys/devices/platform/soc/soc:honeywell,mcu_sensor@0/flush
+    chown system system /sys/devices/platform/soc/soc:honeywell,mcu_sensor@0/enable
+    chmod 0664 /sys/devices/platform/soc/soc:honeywell,mcu_sensor@0/enable
+
+on property:ro.hon.plat.wwan=true
+#   start modem_info_svc
+   start set_wwan_version
+
+service modem_info_svc /system/bin/diag_dci_modem_info
+    class main
+    user root
+    group root system radio
+    disabled
+    oneshot
+
+on property:ro.vendor.honeywell.build.fingerprint=*
+   setprop ro.vendor.build.fingerprint ${ro.vendor.honeywell.build.fingerprint}
+   setprop ro.product.vendor.model ${ro.vendor.honeywell.product.model}
+   setprop ro.product.vendor.name ${ro.vendor.honeywell.product.name}
+   setprop ro.product.vendor.device ${ro.vendor.honeywell.product.device}
+   setprop ro.product.first_api_level ${ro.honeywell.product.first_api_level}
+
+on property:sys.boot_completed=1
+    start kernelcrash-mode-config
+
+service sensorcal-apply /vendor/bin/sensorcal-apply.sh
+     class late_start
+     user root
+     group root system
+     disabled
+     oneshot
+
+service kernelcrash-mode-config /vendor/bin/kernelcrash-mode-config.sh
+     class late_start
+     user root
+     group root system
+     disabled
+     oneshot
+
+service dmclient /system/bin/dmclient
+    disabled
+    user system
+    group system radio net_raw net_admin inet sdcard_rw media_rw
+
+on property:persist.vendor.omadm.dmclient=Verizon
+    start dmclient
+
+on property:persist.vendor.omadm.dmclient=None
+    stop dmclient

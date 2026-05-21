@@ -1,0 +1,48 @@
+on post-fs-data && property:ro.hsm.model.num=CK65
+	mkdir /data/vendor/touch 0770 system system
+	chmod 0664 /sys/bus/i2c/devices/4-004a/cfg_path
+	chown system system /sys/bus/i2c/devices/4-004a/cfg_path
+        chmod 0664 /sys/bus/i2c/devices/4-004a/cfg_mode
+        chown system system /sys/bus/i2c/devices/4-004a/cfg_mode
+	start touch_conf_init
+
+on post-fs-data && property:ro.hsm.model.num=CT60
+	mkdir /data/vendor/touch 0770 system system
+	chmod 0664 /sys/bus/i2c/devices/4-004a/cfg_path
+	chown system system /sys/bus/i2c/devices/4-004a/cfg_path
+        chmod 0664 /sys/bus/i2c/devices/4-004a/cfg_mode
+        chown system system /sys/bus/i2c/devices/4-004a/cfg_mode
+	start touch_conf_init
+
+on post-fs-data && property:ro.hsm.model.num=CN80
+	mkdir /data/vendor/touch 0770 system system
+	chmod 0664 /sys/bus/i2c/devices/4-004a/cfg_path
+	chown system system /sys/bus/i2c/devices/4-004a/cfg_path
+        chmod 0664 /sys/bus/i2c/devices/4-004a/cfg_mode
+        chown system system /sys/bus/i2c/devices/4-004a/cfg_mode
+	start touch_conf_init
+
+on post-fs-data && property:ro.hsm.model.num=CN85
+	mkdir /data/vendor/touch 0770 system system
+	chmod 0664 /sys/bus/i2c/devices/4-004a/cfg_path
+	chown system system /sys/bus/i2c/devices/4-004a/cfg_path
+        chmod 0664 /sys/bus/i2c/devices/4-004a/cfg_mode
+        chown system system /sys/bus/i2c/devices/4-004a/cfg_mode
+	start touch_conf_init
+
+on post-fs-data && property:ro.hsm.model.num=CT40
+	mkdir /data/vendor/touch 0770 system system
+	chmod 0664 /sys/bus/i2c/devices/4-004a/cfg_path
+	chown system system /sys/bus/i2c/devices/4-004a/cfg_path
+        chmod 0664 /sys/bus/i2c/devices/4-004a/cfg_mode
+        chown system system /sys/bus/i2c/devices/4-004a/cfg_mode
+	chmod 0664 /sys/bus/i2c/devices/4-004b/cfg_path
+	chown system system /sys/bus/i2c/devices/4-004b/cfg_path
+	start touch_conf_init
+
+service touch_conf_init /system/vendor/bin/touch-conf-init.sh
+	class core
+	user system
+	group system
+	oneshot
+	disabled

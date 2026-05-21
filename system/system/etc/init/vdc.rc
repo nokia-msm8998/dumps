@@ -1,0 +1,38 @@
+# One shot invocation to deal with encrypted volume.
+on defaultcrypto
+    exec - root -- /system/bin/vdc --wait cryptfs mountdefaultencrypted
+    # vold will set vold.decrypt to trigger_restart_framework (default
+    # encryption) or trigger_restart_min_framework (other encryption)
+
+# One shot invocation to encrypt unencrypted volumes
+on encrypt
+    start surfaceflinger
+    exec - root -- /system/bin/vdc --wait cryptfs enablecrypto
+    # vold will set vold.decrypt to trigger_restart_framework (default
+    # encryption)
+
+# One shot invocation to deal with encrypted ipsm.
+on defaultcrypto_ipsm
+    exec - root -- /system/bin/vdc --wait cryptfs mountdefaultencrypted_ipsm
+    # vold will set vold.decrypt to trigger_restart_framework (default
+    # encryption) or trigger_restart_min_framework (other encryption)
+
+# One shot invocation to encrypt unencrypted ipsm
+on encrypt_ipsm
+    start surfaceflinger
+    exec - root -- /system/bin/vdc --wait cryptfs enablecrypto_ipsm
+    # vold will set vold.decrypt to trigger_restart_framework (default
+    # encryption)
+
+# One shot invocation to deal with encrypted secure.
+on defaultcrypto_secure
+    exec - root -- /system/bin/vdc --wait cryptfs mountdefaultencrypted_secure
+    # vold will set vold.decrypt to trigger_restart_framework (default
+    # encryption) or trigger_restart_min_framework (other encryption)
+
+# One shot invocation to encrypt unencrypted secure.
+on encrypt_secure
+    start surfaceflinger
+    exec - root -- /system/bin/vdc --wait cryptfs enablecrypto_secure
+    # vold will set vold.decrypt to trigger_restart_framework (default
+    # encryption)

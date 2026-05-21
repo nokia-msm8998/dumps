@@ -1,0 +1,9 @@
+CT40Max,2022-11-11
+
+2022-11-11
+- Add HAC device 53 and pair device (Tx 41 & Rx 53).
+- Add new ID (253) for VOIP HAC.
+
+CT40-G1&G2, 2022-0601
+- Add new speaker ID (155) for MAX98937
+- Tune the gain to decrease 0.6dB for speaker path.

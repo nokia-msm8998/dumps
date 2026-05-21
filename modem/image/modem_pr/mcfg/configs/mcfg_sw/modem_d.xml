@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ModemModeConfig>
+
+ <mode name="ROW_data">
+  <config_name name="ROW_data"/>
+  <path name="data/vendor/modem_config/mcfg_sw/generic/common/row/commerci/dataonly/mcfg_sw.mbn"/>
+ </mode>
+
+ <mode name="Verizon_data">
+  <config_name name="hVoLTE-Verizon_data"/>
+  <path name="data/vendor/modem_config/mcfg_sw/generic/na/verizon/hvolte/dataonly/mcfg_sw.mbn"/>
+ </mode>
+
+ <mode name="ATT_data">
+  <config_name name="VoLTE-ATT_data"/>
+  <path name="data/vendor/modem_config/mcfg_sw/generic/na/att/volte/dataonly/mcfg_sw.mbn"/>
+ </mode>
+
+ <mode name="Sprint_data">
+  <config_name name="Commercial-Sprint_data"/>
+  <path name="data/vendor/modem_config/mcfg_sw/generic/na/sprint/commerci/dataonly/mcfg_sw.mbn"/>
+ </mode>
+
+ <mode name="Sprint-Curiosity_data">
+  <config_name name="Sprint-Curiosity_data"/>
+  <path name="data/vendor/modem_config/mcfg_sw/generic/na/sprint/sprintcu/dataonly/mcfg_sw.mbn"/>
+ </mode>
+
+  <mode name="ATT-Cricket_data">
+  <config_name name="ATT-Cricket_data"/>
+  <path name="data/vendor/modem_config/mcfg_sw/generic/na/att/cricket/dataonly/mcfg_sw.mbn"/>
+ </mode>
+ <mode name="Default_data">
+  <config_name name="Default_data"/>
+  <path name="data/vendor/modem_config/mcfg_sw/generic/common/row/row_defa/dataonly/mcfg_sw.mbn"/>
+ </mode>
+  <mode name="Turkey_dataonly">
+  <config_name name="Turkey_dataonly"/>
+  <path name="data/vendor/modem_config/mcfg_sw/generic/common/row/turkeyd/mcfg_sw.mbn"/>
+ </mode>
+</ModemModeConfig>

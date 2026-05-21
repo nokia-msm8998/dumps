@@ -1,0 +1,183 @@
+{
+  "PROPERTY": [
+    {
+      "property": "ro.product.first_api_level",
+      "value": [
+        {
+          "val": "27",
+          "permission": [
+            "android.software.device_id_attestation"
+          ]
+        },
+        {
+          "val": "28",
+          "permission": [
+            "android.software.device_id_attestation"
+          ]
+        }
+      ]
+    },
+    {
+      "property": "persist.sys.camera.full",
+      "value": [
+        {
+          "val": "true",
+          "permission": [
+            "android.hardware.camera.level.full",
+            "android.hardware.camera.capability.manual_sensor",
+            "android.hardware.camera.capability.manual_post_processing",
+            "android.hardware.camera.capability.raw"
+          ]
+        }
+      ]
+    },
+    {
+      "property": "ro.product.first_api_level",
+      "value": [
+        {
+          "val": "25",
+          "permission": [
+            "android.hardware.camera.capability.manual_sensor",
+            "android.hardware.camera.capability.raw"
+          ]
+        },
+        {
+          "val": "27",
+          "permission": [
+            "android.hardware.camera.capability.manual_sensor",
+            "android.hardware.camera.capability.raw",
+            "android.software.device_id_attestation"
+          ]
+        },
+        {
+          "val": "28",
+          "permission": [
+            "android.software.device_id_attestation",
+            "android.hardware.camera.level.full",
+            "android.hardware.camera.capability.manual_sensor",
+            "android.hardware.camera.capability.manual_post_processing",
+            "android.hardware.camera.capability.raw"
+          ]
+        }
+      ]
+    },
+    {
+      "property": "ro.hon.plat.camera",
+      "value": [
+        {
+          "val": "rear",
+          "permission": [
+            "android.hardware.camera.any",
+            "android.hardware.camera",
+            "android.hardware.camera.autofocus",
+            "android.hardware.camera.flash"
+          ]
+        },
+        {
+          "val": "front",
+          "permission": [
+            "android.hardware.camera.any",
+            "android.hardware.camera.front"
+          ]
+        },
+        {
+          "val": "dual",
+          "permission": [
+            "android.hardware.camera.any",
+            "android.hardware.camera",
+            "android.hardware.camera.autofocus",
+            "android.hardware.camera.flash",
+            "android.hardware.camera.front"
+          ]
+        }
+      ]
+    },
+    {
+      "property": "ro.hon.plat.wwan",
+      "value": [
+        {
+          "val": "true",
+          "permission": [
+            "android.software.telecom",
+            "android.hardware.location",
+            "android.hardware.location.gps",
+            "android.hardware.location.network",
+            "android.hardware.telephony",
+            "android.hardware.telephony.cdma",
+            "android.hardware.telephony.gsm",
+            "android.hardware.telephony.ims",
+            "android.hardware.telephony.calling",
+	    "android.hardware.telephony.radio.access",
+	    "android.hardware.telephony.subscription",
+            "android.hardware.se.omapi.uicc"
+          ]
+        }
+      ]
+    },
+    {
+      "property": "ro.hon.plat.wwan",
+      "value": [
+        {
+          "val": "false",
+          "permission": [
+            "android.software.connectionservice"
+          ]
+        }
+      ]
+    },
+    {
+      "property": "ro.hon.plat.sensor.prx",
+      "value": [
+        {
+          "val": "true",
+          "permission": [
+            "android.hardware.sensor.proximity"
+          ]
+        }
+      ]
+    },
+    {
+      "property": "ro.hon.plat.sensor.pressure",
+      "value": [
+        {
+          "val": "true",
+          "permission": [
+            "android.hardware.sensor.barometer"
+          ]
+        }
+      ]
+    },
+    {
+      "property": "ro.hon.plat.sensor.compass",
+      "value": [
+        {
+          "val": "true",
+          "permission": [
+            "android.hardware.sensor.compass"
+          ]
+        }
+      ]
+    },
+    {
+      "property": "ro.hon.plat.app.rf.batch",
+      "value": [
+        {
+          "val": "false",
+          "permission": [
+            "android.hardware.wifi",
+            "android.hardware.wifi.direct",
+            "android.hardware.wifi.rtt",
+            "android.hardware.wifi.passpoint",
+            "android.hardware.bluetooth",
+            "android.hardware.bluetooth_le",
+            "android.hardware.nfc",
+            "android.hardware.nfc.any",
+            "android.hardware.nfc.hce",
+            "android.hardware.nfc.hcef"
+          ]
+        }
+      ]
+    }
+  ]
+}
+

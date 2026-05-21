@@ -1,0 +1,108 @@
+{
+  "PRODUCT": [
+    {
+      "name": "CN80G",
+      "OWN": [
+      ],
+      "BIT": [
+        {
+          "bval": "0",
+          "prop": "ro.hon.plat.deact.camera",
+          "dprop": "none",
+          "TYPE": [
+            {
+              "tval": "0",
+              "pval": "false"
+            },
+            {
+              "tval": "1",
+              "pval": "true"
+            }
+          ]
+        },
+        {
+          "bval": "1",
+          "prop": "ro.hon.plat.deact.scanner",
+          "dprop": "none",
+          "TYPE": [
+            {
+              "tval": "0",
+              "pval": "false"
+            },
+            {
+              "tval": "1",
+              "pval": "true"
+            }
+          ]
+        },
+        {
+          "bval": "2",
+          "prop": "ro.hon.plat.deact.audio",
+          "dprop": "none",
+          "TYPE": [
+            {
+              "tval": "0",
+              "pval": "false"
+            },
+            {
+              "tval": "1",
+              "pval": "true"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "CT40",
+      "OWN": [
+      ],
+      "BIT": [
+        {
+          "bval": "0",
+          "prop": "ro.hon.plat.deact.camera",
+          "dprop": "none",
+          "TYPE": [
+            {
+              "tval": "0",
+              "pval": "false"
+            },
+            {
+              "tval": "1",
+              "pval": "true"
+            }
+          ]
+        },
+        {
+          "bval": "1",
+          "prop": "ro.hon.plat.deact.scanner",
+          "dprop": "none",
+          "TYPE": [
+            {
+              "tval": "0",
+              "pval": "false"
+            },
+            {
+              "tval": "1",
+              "pval": "true"
+            }
+          ]
+        },
+        {
+          "bval": "2",
+          "prop": "ro.hon.plat.deact.audio",
+          "dprop": "none",
+          "TYPE": [
+            {
+              "tval": "0",
+              "pval": "false"
+            },
+            {
+              "tval": "1",
+              "pval": "true"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

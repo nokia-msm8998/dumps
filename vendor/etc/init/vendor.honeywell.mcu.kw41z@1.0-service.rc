@@ -1,0 +1,11 @@
+on property:ro.hsm.model.num=CN80
+   chown system system /sys/devices/platform/kw41z/pin_rst_state
+   chown system system /sys/devices/platform/kw41z/pin_wkup_state
+   start honeywell_kw41z_service
+
+service honeywell_kw41z_service /vendor/bin/hw/vendor.honeywell.mcu.kw41z@1.0-service
+    interface vendor.honeywell.mcu.kw41z@1.0::IMCUService default
+    class hal
+    user system
+    group system
+    disabled

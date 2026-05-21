@@ -1,0 +1,5 @@
+service qdcm_display_init /vendor/bin/qdcm_display_init
+    class late_start
+    user system
+    group system
+    oneshot

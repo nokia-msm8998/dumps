@@ -1,0 +1,31 @@
+#
+# Actions and services for the hon660 platform
+#
+
+on init
+    export IPSM_BLK_DEV /dev/block/bootdevice/by-name/IPSM
+
+on fs
+    wait /dev/block/bootdevice/by-name/IPSM
+    restorecon_recursive /ipsm
+
+on post-fs-data
+    chown system system /ipsm
+    chmod 0771 /ipsm
+    restorecon_recursive /ipsm
+    mkdir /ipsm/media 0770 media_rw media_rw
+    mkdir /ipsm/media/honeywell 0775 media_rw media_rw
+    mkdir /ipsm/media/honeywell/autoinstall 0775 media_rw media_rw
+    mkdir /ipsm/media/FTM_AP 0775 media_rw media_rw
+    mkdir /ipsm/media/honeywell/wifi 0775 media_rw media_rw
+    chown media_rw media_rw /ipsm/media/honeywell
+    chown media_rw media_rw /ipsm/media/honeywell/autoinstall
+    chown media_rw media_rw /ipsm/media/FTM_AP
+    chown media_rw media_rw /ipsm/media/honeywell/wifi
+
+service setup_fs /system/bin/setup_fs /dev/block/bootdevice/by-name/IPSM
+    class core
+    user root
+    group root
+    oneshot
+

@@ -1,0 +1,8 @@
+on init
+    start hsm-property
+
+service hsm-property /system/vendor/bin/hsm-property
+	class core
+	oneshot
+
+

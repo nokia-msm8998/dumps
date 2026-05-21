@@ -1,0 +1,4 @@
+service smartsensor_service /vendor/bin/hw/vendor.honeywell.smartsensor@1.0-service
+    class hal
+    user root
+    group root

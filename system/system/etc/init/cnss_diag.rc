@@ -1,0 +1,15 @@
+service cnss_diag /system/bin/cnss_diag -q -f -t HELIUM
+    user system
+    group everybody system wifi inet sdcard_rw media_rw diag
+    oneshot
+
+# for wifi driver/fw log
+on property:persist.wlan.driverlogenable=true
+    start cnss_diag
+
+on property:persist.wlan.driverlogenable=false
+    stop cnss_diag
+
+on post-fs-data
+    copy /vendor/firmware_mnt/image/data.msc /data/misc/wifi/data.msc
+    chown system system /data/misc/wifi/data.msc

@@ -1,0 +1,5 @@
+service honeywell_imager_service /vendor/bin/hw/vendor.honeywell.imager@1.0-service
+    class late_start
+    user root
+    group audio camera input drmrpc
+    capabilities SYS_NICE
